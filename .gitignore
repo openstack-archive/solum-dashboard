@@ -1,54 +1,28 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-bin/
-build/
-develop-eggs/
-dist/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
+*.pyc
+*.swp
+*.sqlite3
+.environment_version
+.selenium_log
+.coverage*
+.noseids
+.DS_STORE
+*.egg/
 *.egg-info/
-.installed.cfg
-*.egg
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
 coverage.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-# Rope
-.ropeproject
-
-# Django stuff:
-*.log
-*.pot
-
-# Sphinx documentation
-docs/_build/
-
+nosetests.xml
+pep8.txt
+pylint.txt
+reports
+horizon.egg-info
+.secret_key_store
+doc/build/
+doc/source/sourcecode
+/static/
+.venv
+.tox
+build
+dist
+AUTHORS
+ChangeLog
+tags
+openstack_dashboard/dummydb.sqlite
