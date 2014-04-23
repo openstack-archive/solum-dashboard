@@ -1,0 +1,30 @@
+{% load i18n sizeformat %}
+<h3>{% trans "Application" %}</h3>
+<div class="status row-fluid detail">
+    <dl>
+        <dt>{% trans "Name" %}</dt>
+        <dd>{{ application.name }}</dd>
+        <dt>{% trans "ID" %}</dt>
+        <dd>{{ application.uuid }}</dd>
+        <dt>{% trans "Description" %}</dt>
+        <dd>{{ application.description|default:"None" }}</dd>
+
+        {% for arti in application.artifacts %}
+
+        <dl class="well">
+            <h4>{% trans "Artifact" %}: {{ arti.name }}</h4>
+
+            <dt>{% trans "Type" %}</dt>
+            <dd>{{ arti.artifact_type|default:"Type is not specified" }}</dd>
+
+            <dt>{% trans "Git URL" %}</dt>
+            <dd>{{ arti.content }}</dd>
+
+            <dt>{% trans "Language Pack" %}</dt>
+            <dd>{{ arti.language_pack }}</dd>
+        </dl>
+        {% empty %}
+          <dd>None</dd>
+        {% endfor %}
+    </dl>
+</div>
