@@ -17,13 +17,12 @@ from django.utils.translation import ugettext as _
 
 import horizon
 
+import solumdashboard.dashboard
 
-class SolumPlugin(horizon.Dashboard):
-    name = _("Solum")
-    slug = "solum"
-    panels = ('applications', 'assemblies')
-    default_panel = 'applications'
-    nav = True
-    supports_tenants = True
 
-horizon.register(SolumPlugin)
+class AssembliesPanel(horizon.Panel):
+    name = _("Assemblies")
+    slug = 'assemblies'
+
+
+solumdashboard.dashboard.SolumPlugin.register(AssembliesPanel)

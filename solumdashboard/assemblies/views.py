@@ -13,17 +13,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.utils.translation import ugettext as _
+import logging
 
-import horizon
+from horizon import tables
+#from horizon import tabs
+#from horizon import workflows
+
+from solumdashboard.api.client import client as solumclient
+from solumdashboard.assemblies import tables as assem_tables
 
 
-class SolumPlugin(horizon.Dashboard):
-    name = _("Solum")
-    slug = "solum"
-    panels = ('applications', 'assemblies')
-    default_panel = 'applications'
-    nav = True
-    supports_tenants = True
+LOG = logging.getLogger(__name__)
 
-horizon.register(SolumPlugin)
+
+class IndexView(tables.DataTableView):
+    table_class = assem_tables.AssembliesTable
+    template_name = 'assemblies/index.html'
+
+    def get_data(self):
+        solum = solumclient(self.request)
+        return solum.assemblies.list()

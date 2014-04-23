@@ -13,17 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.utils.translation import ugettext as _
+import solumdashboard.assemblies.views as views
+from solumdashboard.utils import importutils
 
-import horizon
+urls = importutils.import_any('django.conf.urls.defaults',
+                              'django.conf.urls')
 
 
-class SolumPlugin(horizon.Dashboard):
-    name = _("Solum")
-    slug = "solum"
-    panels = ('applications', 'assemblies')
-    default_panel = 'applications'
-    nav = True
-    supports_tenants = True
+patterns = urls.patterns
+url = urls.url
 
-horizon.register(SolumPlugin)
+
+urlpatterns = patterns('',
+                       url(r'^$', views.IndexView.as_view(),
+                           name='index'),
+                       url(r'^$', views.IndexView.as_view(),
+                           name='assemblies'))
