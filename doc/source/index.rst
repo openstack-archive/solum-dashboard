@@ -1,4 +1,1 @@
-
-Welcome to solum-dashboard's documentation!
-===========================================
-
+.. include:: ../../README.rst
