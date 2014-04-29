@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
-
 from horizon import tables
 from horizon import tabs
 from horizon import workflows
@@ -23,9 +21,6 @@ from solumdashboard.api.client import client as solumclient
 from solumdashboard.applications import tables as app_tables
 import solumdashboard.applications.tabs as _tabs
 import solumdashboard.applications.workflows.create as create_flow
-
-
-LOG = logging.getLogger(__name__)
 import solumdashboard.applications.workflows.launch as launch_flow
 
 

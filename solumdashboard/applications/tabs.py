@@ -13,14 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
-
 from django.utils.translation import ugettext as _
 from horizon import tabs
 
 from solumdashboard.api.client import client as solumclient
-
-LOG = logging.getLogger(__name__)
 
 
 class GeneralTab(tabs.Tab):
