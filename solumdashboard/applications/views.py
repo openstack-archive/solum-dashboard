@@ -26,6 +26,7 @@ import solumdashboard.applications.workflows.create as create_flow
 
 
 LOG = logging.getLogger(__name__)
+import solumdashboard.applications.workflows.launch as launch_flow
 
 
 class IndexView(tables.DataTableView):
@@ -55,3 +56,14 @@ class DetailView(tabs.TabView):
 
     def get_data(self):
         pass
+
+
+class LaunchApplicationView(workflows.WorkflowView):
+    workflow_class = launch_flow.LaunchApplication
+    success_url = "horizon:solum:assemblies"
+    classes = ("ajax-modal")
+    template_name = "applications/launch.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(LaunchApplicationView, self).get_context_data(**kwargs)
+        return context

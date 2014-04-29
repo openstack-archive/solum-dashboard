@@ -1,0 +1,18 @@
+{% load i18n sizeformat %}
+<h3>{% trans "Application" %}</h3>
+<div class="status row-fluid detail">
+    <dl>
+        <dt>{% trans "Name" %}</dt>
+        <dd>{{ assembly.name }}</dd>
+        <dt>{% trans "ID" %}</dt>
+        <dd>{{ assembly.uuid }}</dd>
+        <dt>{% trans "Description" %}</dt>
+        <dd>{{ assembly.description|default:"None" }}</dd>
+        <dt>{% trans "Status" %}</dt>
+        <dd>{{ assembly.status|default:"None" }}</dd>
+        <dt>{% trans "URI" %}</dt>
+        <dd>{{ assembly.application_uri|default:"None" }}</dd>
+        <dt>{% trans "Trigger URI" %}</dt>
+        <dd>{{ assembly.trigger_uri|default:"None" }}</dd>
+    </dl>
+</div>

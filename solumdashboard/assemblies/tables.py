@@ -20,7 +20,7 @@ from horizon import tables
 from solumdashboard.api.client import client as solumclient
 
 
-class CreateApplication(tables.LinkAction):
+class CreateAssembly(tables.LinkAction):
     name = "create"
     verbose_name = _("New Assembly")
     url = "horizon:solum:assemblies:create"
@@ -56,7 +56,8 @@ class AssembliesTable(tables.DataTable):
     uuid = tables.Column('uuid', verbose_name=_('UUID'),
                          link=("horizon:solum:assemblies:detail"))
     name = tables.Column('name', verbose_name=_('Name'))
-    #git_url = tables.Column('git_url', verbose_name=_('GitUrl'))
+    application = tables.Column('application', verbose_name=_('Application'),
+                                link=("horizon:solum:applications:detail"))
     description = tables.Column('description', verbose_name=_('Description'))
 
     def get_object_id(self, app):

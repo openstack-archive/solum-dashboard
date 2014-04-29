@@ -16,11 +16,11 @@
 import logging
 
 from horizon import tables
-#from horizon import tabs
-#from horizon import workflows
+from horizon import tabs
 
 from solumdashboard.api.client import client as solumclient
 from solumdashboard.assemblies import tables as assem_tables
+import solumdashboard.assemblies.tabs as _tabs
 
 
 LOG = logging.getLogger(__name__)
@@ -33,3 +33,15 @@ class IndexView(tables.DataTableView):
     def get_data(self):
         solum = solumclient(self.request)
         return solum.assemblies.list()
+
+
+class DetailView(tabs.TabView):
+    template_name = 'assemblies/detail.html'
+    tab_group_class = _tabs.AssemDetailsTabs
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        return super(DetailView, self).get_context_data(**kwargs)
+
+    def get_data(self):
+        pass

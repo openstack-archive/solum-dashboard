@@ -13,8 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.core import urlresolvers
+from django.utils import http
 from django.utils.translation import ugettext as _
-
 from horizon import tables
 
 from solumdashboard.api.client import client as solumclient
@@ -25,6 +26,19 @@ class CreateApplication(tables.LinkAction):
     verbose_name = _("New Application")
     url = "horizon:solum:applications:create"
     classes = ("btn-launch", "ajax-modal")
+
+
+class LaunchApplication(tables.LinkAction):
+    name = "build-and-deploy"
+    verbose_name = _("Build and Deploy Application")
+    url = "horizon:solum:applications:launch"
+    classes = ("btn-launch", "ajax-modal")
+
+    def get_link_url(self, datum):
+        base_url = urlresolvers.reverse(self.url)
+
+        params = http.urlencode({"application_id": datum.uuid})
+        return "?".join([base_url, params])
 
 
 class DeleteApplication(tables.BatchAction):
@@ -66,4 +80,4 @@ class ApplicationsTable(tables.DataTable):
         name = "applications"
         verbose_name = _("Applications")
         table_actions = (CreateApplication, DeleteApplication)
-        row_actions = (ViewApplication, DeleteApplication)
+        row_actions = (ViewApplication, LaunchApplication, DeleteApplication)

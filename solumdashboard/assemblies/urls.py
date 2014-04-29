@@ -28,4 +28,7 @@ urlpatterns = patterns('',
                        url(r'^$', views.IndexView.as_view(),
                            name='index'),
                        url(r'^$', views.IndexView.as_view(),
-                           name='assemblies'))
+                           name='assemblies'),
+                       url(r'^(?P<assembly_id>[^/]+)$',
+                           views.DetailView.as_view(),
+                           name='detail'))
