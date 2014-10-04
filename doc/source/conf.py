@@ -22,7 +22,6 @@ sys.path.insert(0, os.path.abspath('../..'))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
     'oslosphinx',
 ]
 
@@ -69,6 +68,3 @@ man_pages = []
 
 # If true, show URL addresses after external links.
 man_show_urls = True
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
