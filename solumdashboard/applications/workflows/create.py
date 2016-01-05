@@ -56,7 +56,7 @@ class CreateApplication(workflows.Workflow):
     default_steps = (SelectGitUrl,)
 
     def handle(self, request, context):
-        LOG.warn('CreateApplication %s' % context)
+        LOG.warning('CreateApplication %s' % context)
         solum = solumclient(request)
         arti = {}
         arti['name'] = context.get('name', 'generated_artifact')
