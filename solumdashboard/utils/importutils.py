@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from solumdashboard.openstack.common import importutils
+from oslo_utils import importutils
 
 
 def import_any(*args):
