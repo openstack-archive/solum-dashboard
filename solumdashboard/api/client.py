@@ -17,15 +17,8 @@ import logging
 
 from solumclient import client as api_client
 
-from solumdashboard.utils import importutils
-
-
-# horizon.api is for backward compatibility with folsom
-base = importutils.import_any('openstack_dashboard.api.base',
-                              'horizon.api.base')
-
-keystone = importutils.import_any('openstack_dashboard.api.keystone',
-                                  'horizon.api.keystone')
+from openstack_dashboard.api import base
+from openstack_dashboard.api import keystone
 
 LOG = logging.getLogger(__name__)
 
