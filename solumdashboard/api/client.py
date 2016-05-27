@@ -15,6 +15,8 @@
 
 import logging
 
+from horizon import exceptions
+
 from solumclient import client as api_client
 
 from solumdashboard.utils import importutils
@@ -36,13 +38,13 @@ def get_horizon_parameter(name, default_value):
     if hasattr(openstack_dashboard.settings, name):
         return getattr(openstack_dashboard.settings, name)
     else:
-        logging.info('Parameter %s is not found in local_settings.py, '
-                     'using default "%s"' % (name, default_value))
+        LOG.warning('Parameter %s is not found in local_settings.py, '
+                    'using default "%s"' % (name, default_value))
         return default_value
 
 
 # These parameters should be defined in Horizon's local_settings.py
-# Example SOLUM_URL - http://localhost:9000/v1.0
+# Example SOLUM_URL - http://localhost:9777
 SOLUM_URL = get_horizon_parameter('SOLUM_URL', None)
 # "type" of Solum service registered in keystone
 SOLUM_SERVICE = get_horizon_parameter('SOLUM_SERVICE',
@@ -50,7 +52,15 @@ SOLUM_SERVICE = get_horizon_parameter('SOLUM_SERVICE',
 
 
 def get_solum_url(request):
-    return base.url_for(request, SOLUM_SERVICE)
+    endpoint = SOLUM_URL
+    if not endpoint:
+        try:
+            endpoint = base.url_for(request, SOLUM_SERVICE)
+        except exceptions.ServiceCatalogException:
+            endpoint = 'http://localhost:9777'
+            LOG.warning('Solum API location could not be found in Service '
+                        'Catalog, using default: {0}'.format(endpoint))
+    return endpoint
 
 
 def client(request):
@@ -58,7 +68,5 @@ def client(request):
                                           'internalURL')
     auth_url = keystone._get_endpoint_url(request, endpoint_type)
     return api_client.Client('1', endpoint=get_solum_url(request),
-                             service_type=SOLUM_SERVICE,
-                             tenant_id=request.user.tenant_id,
                              token=request.user.token.id,
                              auth_url=auth_url)

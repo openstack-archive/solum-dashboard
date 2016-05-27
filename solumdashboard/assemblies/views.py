@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from horizon import exceptions
 from horizon import tables
 from horizon import tabs
 
@@ -26,8 +27,13 @@ class IndexView(tables.DataTableView):
     template_name = 'assemblies/index.html'
 
     def get_data(self):
-        solum = solumclient(self.request)
-        return solum.assemblies.list()
+        try:
+            solum = solumclient(self.request)
+            assemblies = solum.assemblies.list()
+        except Exception:
+            assemblies = []
+            exceptions.handle(self.request, 'Unable to retrieve assemblies.')
+        return assemblies
 
 
 class DetailView(tabs.TabView):
