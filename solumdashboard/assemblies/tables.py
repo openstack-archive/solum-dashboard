@@ -63,7 +63,7 @@ class AssembliesTable(tables.DataTable):
     def get_object_id(self, app):
         return app.uuid
 
-    class Meta:
+    class Meta(object):
         name = "assemblies"
         verbose_name = _("Assemblies")
         table_actions = (DeleteAssembly,)

@@ -40,7 +40,7 @@ class ConfigAssemblyAction(workflows.Action):
             widget=forms.HiddenInput(),
             initial=plan_uri)
 
-    class Meta:
+    class Meta(object):
         name = _("Configure name and description")
         help_text_template = "applications/_launch_configure_help.html"
 

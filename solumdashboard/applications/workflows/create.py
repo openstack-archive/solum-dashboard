@@ -36,7 +36,7 @@ class GitUrlAction(workflows.Action):
     def __init__(self, request, *args, **kwargs):
         super(GitUrlAction, self).__init__(request, *args, **kwargs)
 
-    class Meta:
+    class Meta(object):
         name = _("Select git url for the application")
         help_text_template = ("applications/_create_general_help.html")
 

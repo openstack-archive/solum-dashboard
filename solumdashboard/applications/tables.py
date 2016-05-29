@@ -70,13 +70,13 @@ class ApplicationsTable(tables.DataTable):
     uuid = tables.Column('uuid', verbose_name=_('UUID'),
                          link=("horizon:solum:applications:detail"))
     name = tables.Column('name', verbose_name=_('Name'))
-    #git_url = tables.Column('git_url', verbose_name=_('GitUrl'))
+    # git_url = tables.Column('git_url', verbose_name=_('GitUrl'))
     description = tables.Column('description', verbose_name=_('Description'))
 
     def get_object_id(self, app):
         return app.uuid
 
-    class Meta:
+    class Meta(object):
         name = "applications"
         verbose_name = _("Applications")
         table_actions = (CreateApplication, DeleteApplication)

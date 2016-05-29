@@ -14,7 +14,7 @@
 # limitations under the License.
 
 from openstack_dashboard import exceptions
-#from solumclient.openstack.common.apiclient import exceptions as solumclient
+# from solumclient.openstack.common.apiclient import exceptions as solumclient
 
 NOT_FOUND = exceptions.NOT_FOUND
 RECOVERABLE = exceptions.RECOVERABLE
