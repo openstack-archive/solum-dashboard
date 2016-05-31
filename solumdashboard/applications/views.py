@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from horizon import exceptions
 from horizon import tables
 from horizon import tabs
 from horizon import workflows
@@ -29,8 +30,13 @@ class IndexView(tables.DataTableView):
     template_name = 'applications/index.html'
 
     def get_data(self):
-        solum = solumclient(self.request)
-        return solum.plans.list()
+        try:
+            solum = solumclient(self.request)
+            plans = solum.plans.list()
+        except Exception:
+            plans = []
+            exceptions.handle(self.request, 'Unable to retrieve plans.')
+        return plans
 
 
 class CreateView(workflows.WorkflowView):
