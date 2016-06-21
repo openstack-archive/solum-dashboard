@@ -15,15 +15,19 @@
 
 from django.utils.translation import ugettext_lazy as _
 
-import horizon
+from horizon import tables
 
 
-class SolumPlugin(horizon.Dashboard):
-    name = _("Solum")
-    slug = "solum"
-    panels = ('applications', 'assemblies', 'languagepacks')
-    default_panel = 'applications'
-    nav = True
-    supports_tenants = True
+class LanguagepacksTable(tables.DataTable):
+    uuid = tables.Column("uuid", verbose_name=_("UUID"))
+    name = tables.Column("name", verbose_name=_("Name"))
+    description = tables.Column("description", verbose_name=_("Description"))
+    status = tables.Column("status", verbose_name=_("Status"))
+    source_uri = tables.Column("source_uri", verbose_name=_("Source Uri"))
 
-horizon.register(SolumPlugin)
+    def get_object_id(self, lp):
+        return lp.uuid
+
+    class Meta:
+        name = "languagepacks"
+        verbose_name = _("Languagepacks")

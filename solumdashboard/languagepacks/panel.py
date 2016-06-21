@@ -17,13 +17,12 @@ from django.utils.translation import ugettext_lazy as _
 
 import horizon
 
+import solumdashboard.dashboard
 
-class SolumPlugin(horizon.Dashboard):
-    name = _("Solum")
-    slug = "solum"
-    panels = ('applications', 'assemblies', 'languagepacks')
-    default_panel = 'applications'
-    nav = True
-    supports_tenants = True
 
-horizon.register(SolumPlugin)
+class LanguagepacksPanel(horizon.Panel):
+    name = _("Languagepacks")
+    slug = 'languagepacks'
+
+
+solumdashboard.dashboard.SolumPlugin.register(LanguagepacksPanel)
