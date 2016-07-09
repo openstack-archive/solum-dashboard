@@ -19,7 +19,8 @@ from horizon import tables
 
 
 class LanguagepacksTable(tables.DataTable):
-    uuid = tables.Column("uuid", verbose_name=_("UUID"))
+    uuid = tables.Column("uuid", verbose_name=_("UUID"),
+                         link=("horizon:solum:languagepacks:detail"))
     name = tables.Column("name", verbose_name=_("Name"))
     description = tables.Column("description", verbose_name=_("Description"))
     status = tables.Column("status", verbose_name=_("Status"))

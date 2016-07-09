@@ -1,0 +1,42 @@
+{% load i18n %}
+
+<div class="detail">
+    <dl class="dl-horizontal">
+        <dt>{% trans "Name" %}</dt>
+        <dd>{{ languagepack.name }}</dd>
+        <dt>{% trans "ID" %}</dt>
+        <dd>{{ languagepack.uuid }}</dd>
+        <dt>{% trans "Description" %}</dt>
+        <dd>{{ languagepack.description|default:"None" }}</dd>
+        <dt>{% trans "Status" %}</dt>
+        <dd>{{ languagepack.status }}</dd>
+        <dt>{% trans "Source Uri" %}</dt>
+        <dd>{{ languagepack.source_uri }}</dd>
+    </dl>
+
+    <h4>{% trans "Log details" %}</h4>
+
+    <hr class="header_rule">
+    <dl class="dl-horizontal">
+    {% for log in loglist %}
+        <dt>{% trans "Resource UUID" %}</dt>
+        <dd>{{ log.resource_uuid }}</dd>
+        <dt>{% trans "Created at" %}</dt>
+        <dd>{{ log.created_at }}</dd>
+        {% if log.local_storage %}
+            <dt>{% trans "Local Storage" %}</dt>
+            <dd>{{ log.local_storage }}</dd>
+        {% elif log.swift_container %}
+            <dt>{% trans "Swift Container" %}</dt>
+            <dd>{{ log.swift_container }}</dd>
+            <dt>{% trans "Swift Path" %}</dt>
+            <dd>{{ log.swift_path }}</dd>
+        {% else %}
+            <dt>{% trans "Location" %}</dt>
+            <dd>{{ log.location }}</dd>
+        {% endif %}
+        {% empty %}
+        <dd><em>{% trans "No Log details." %}</em></dd>
+    {% endfor %}
+    </dl>
+</div>

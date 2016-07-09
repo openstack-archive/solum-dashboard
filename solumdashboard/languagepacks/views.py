@@ -15,8 +15,13 @@
 
 from django.utils.translation import ugettext_lazy as _
 
+import json
+
 from horizon import exceptions
 from horizon import tables
+from horizon import views
+
+from solumclient.v1 import languagepack as cli_lp
 
 from solumdashboard.api.client import client as solumclient
 from solumdashboard.languagepacks import tables as lp_tables
@@ -35,3 +40,34 @@ class IndexView(tables.DataTableView):
             exceptions.handle(self.request,
                               _('Unable to retrieve languagepacks.'))
         return languagepacks
+
+
+class DetailView(views.HorizonTemplateView):
+    template_name = 'languagepacks/detail.html'
+    page_title = "{{ languagepack.name }}"
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+
+        languagepack, loglist = self.get_data()
+        context["languagepack"] = languagepack
+        context["loglist"] = loglist
+        return context
+
+    def get_data(self):
+        lp_id = self.kwargs['languagepack_id']
+        solum = solumclient(self.request)
+
+        languagepack = solum.languagepacks.find(name_or_id=lp_id)
+        loglist = cli_lp.LanguagePackManager(solum).logs(
+            lp_id=lp_id)
+
+        for log in loglist:
+            strategy_info = json.loads(log.strategy_info)
+            if log.strategy == 'local':
+                log.local_storage = log.location
+            elif log.strategy == 'swift':
+                log.swift_container = strategy_info['container']
+                log.swift_path = log.location
+
+        return languagepack, loglist
