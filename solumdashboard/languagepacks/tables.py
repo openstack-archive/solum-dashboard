@@ -14,8 +14,38 @@
 # limitations under the License.
 
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ungettext_lazy
 
 from horizon import tables
+
+from solumdashboard.api.client import client as solumclient
+
+
+class DeleteLanguagepack(tables.DeleteAction):
+    name = "delete"
+
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Delete Languagepack",
+            u"Delete Languagepacks",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Deleted Languagepack",
+            u"Deleted Languagepacks",
+            count
+        )
+
+    def allowed(self, request, template):
+        return True
+
+    def delete(self, request, languagepack_id):
+        solum = solumclient(request)
+        solum.languagepacks.delete(lp_id=languagepack_id)
 
 
 class LanguagepacksTable(tables.DataTable):
@@ -32,3 +62,5 @@ class LanguagepacksTable(tables.DataTable):
     class Meta:
         name = "languagepacks"
         verbose_name = _("Languagepacks")
+        table_actions = (DeleteLanguagepack,)
+        row_actions = (DeleteLanguagepack,)
