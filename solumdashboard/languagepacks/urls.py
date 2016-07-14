@@ -29,5 +29,6 @@ urlpatterns = patterns(
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^$', views.IndexView.as_view(), name='languagepacks'),
     url(r'^detail/(?P<languagepack_id>[^/]+)$',
-        views.DetailView.as_view(), name='detail')
+        views.DetailView.as_view(), name='detail'),
+    url(r'^create$', views.CreateView.as_view(), name='create')
 )
