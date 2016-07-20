@@ -37,7 +37,7 @@ class LaunchApplication(tables.LinkAction):
     def get_link_url(self, datum):
         base_url = urlresolvers.reverse(self.url)
 
-        params = http.urlencode({"application_id": datum.uuid})
+        params = http.urlencode({"application_id": datum.id})
         return "?".join([base_url, params])
 
 
@@ -67,14 +67,16 @@ class ViewApplication(tables.LinkAction):
 
 
 class ApplicationsTable(tables.DataTable):
-    uuid = tables.Column('uuid', verbose_name=_('UUID'),
-                         link=("horizon:solum:applications:detail"))
     name = tables.Column('name', verbose_name=_('Name'))
-    # git_url = tables.Column('git_url', verbose_name=_('GitUrl'))
+    id = tables.Column('id', verbose_name=_('ID'),
+                       link=("horizon:solum:applications:detail"))
+    created_at = tables.Column('created_at', verbose_name=_('Created at'))
     description = tables.Column('description', verbose_name=_('Description'))
+    languagepack = tables.Column('languagepack',
+                                 verbose_name=_('Languagepack'))
 
     def get_object_id(self, app):
-        return app.uuid
+        return app.id
 
     class Meta(object):
         name = "applications"

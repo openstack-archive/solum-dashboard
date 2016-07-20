@@ -24,17 +24,12 @@ patterns = urls.patterns
 url = urls.url
 
 
-urlpatterns = patterns('',
-                       url(r'^$', views.IndexView.as_view(),
-                           name='index'),
-                       url(r'^$', views.IndexView.as_view(),
-                           name='applications'),
-                       url(r'^create$',
-                           views.CreateView.as_view(),
-                           name='create'),
-                       url(r'^launch$',
-                           views.LaunchApplicationView.as_view(),
-                           name='launch'),
-                       url(r'^(?P<application_id>[^/]+)$',
-                           views.DetailView.as_view(),
-                           name='detail'))
+urlpatterns = patterns(
+    '',
+    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', views.IndexView.as_view(), name='applications'),
+    url(r'^create$', views.CreateView.as_view(), name='create'),
+    url(r'^launch$', views.LaunchApplicationView.as_view(),
+        name='launch'),
+    url(r'^(?P<application_id>[^/]+)$', views.DetailView.as_view(),
+        name='detail'))
