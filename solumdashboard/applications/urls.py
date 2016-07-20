@@ -36,4 +36,6 @@ urlpatterns = patterns(
     url(r'^log/(?P<application_id>[^/]+)$', views.LogView.as_view(),
         name='log'),
     url(r'^scale/(?P<application_id>[^/]+)$', views.ScaleView.as_view(),
-        name='scale'))
+        name='scale'),
+    url(r'^update/(?P<application_id>[^/]+)$', views.UpdateView.as_view(),
+        name='update'))

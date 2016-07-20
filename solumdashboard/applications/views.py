@@ -20,11 +20,13 @@ from horizon import exceptions
 from horizon import forms
 from horizon import tables
 from horizon import tabs
+from horizon import workflows
 
 from solumdashboard.api.client import client as solumclient
 from solumdashboard.applications import forms as app_forms
 from solumdashboard.applications import tables as app_tables
 import solumdashboard.applications.tabs as _tabs
+import solumdashboard.applications.workflows.update as update_flow
 
 
 class IndexView(tables.DataTableView):
@@ -68,6 +70,27 @@ class ScaleView(forms.ModalFormView):
     def get_initial(self):
         application_id = self.kwargs['application_id']
         return {'application_id': application_id}
+
+
+class UpdateView(workflows.WorkflowView):
+    workflow_class = update_flow.UpdateApplicationClass
+    success_url = "horizon:solum:applications:index"
+    classes = ("ajax-modal")
+
+    def get_context_data(self, **kwargs):
+        context = super(UpdateView, self).get_context_data(**kwargs)
+        context["application_id"] = self.kwargs["application_id"]
+        return context
+
+    def _get_object(self, *args, **kwargs):
+        application_id = self.kwargs['application_id']
+        solum = solumclient(self.request)
+        app = solum.apps.find(name_or_id=application_id)
+        return app
+
+    def get_initial(self):
+        app = self._get_object()
+        return {'application_id': app.id}
 
 
 class DetailView(tabs.TabView):
