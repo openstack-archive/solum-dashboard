@@ -15,7 +15,7 @@
 
 from django.core import urlresolvers
 from django.utils import http
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from horizon import tables
 
 from solumdashboard.api.client import client as solumclient
