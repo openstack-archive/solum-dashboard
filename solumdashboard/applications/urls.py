@@ -31,5 +31,5 @@ urlpatterns = patterns(
     url(r'^create$', views.CreateView.as_view(), name='create'),
     url(r'^launch$', views.LaunchApplicationView.as_view(),
         name='launch'),
-    url(r'^(?P<application_id>[^/]+)$', views.DetailView.as_view(),
-        name='detail'))
+    url(r'^detail/(?P<application_id>[^/]+)$',
+        views.DetailView.as_view(), name='detail'))

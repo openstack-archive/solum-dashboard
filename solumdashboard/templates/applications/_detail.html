@@ -1,30 +1,52 @@
-{% load i18n sizeformat %}
-<h3>{% trans "Application" %}</h3>
-<div class="status row-fluid detail">
-    <dl>
+{% load i18n %}
+
+<div class="detail">
+    <dl class="dl-horizontal">
         <dt>{% trans "Name" %}</dt>
         <dd>{{ application.name }}</dd>
         <dt>{% trans "ID" %}</dt>
-        <dd>{{ application.uuid }}</dd>
+        <dd>{{ application.id }}</dd>
+        <dt>{% trans "Created at" %}</dt>
+        <dd>{{ application.created_at }}</dd>
+        <dt>{% trans "Updated at" %}</dt>
+        <dd>{{ application.updated_at }}</dd>
         <dt>{% trans "Description" %}</dt>
         <dd>{{ application.description|default:"None" }}</dd>
+        <dt>{% trans "Languagepack" %}</dt>
+        <dd>{{ application.languagepack }}</dd>
+        <dt>{% trans "Entry points" %}</dt>
+        <dd>{{ application.entry_points }}</dd>
+        <dt>{% trans "Ports" %}</dt>
+        <dd>{{ application.ports }}</dd>
+        <dt>{% trans "Source" %}</dt>
+        <dd>{{ application.source }}</dd>
+        <dt>{% trans "Trigger UUID" %}</dt>
+        <dd>{{ application.trigger_uuid }}</dd>
+        <dt>{% trans "Trigger" %}</dt>
+        <dd>{{ application.trigger }}</dd>
+        <dt>{% trans "App URL" %}</dt>
+        <dd>{{ application.app_url }}</dd>
 
-        {% for arti in application.artifacts %}
+        {% if application.target_instances %}
+            <dt>{% trans "Target Instances" %}</dt>
+            <dd>{{ application.target_instances }}</dd>
+        {% endif %}
 
-        <dl class="well">
-            <h4>{% trans "Artifact" %}: {{ arti.name }}</h4>
+    </dl>
 
-            <dt>{% trans "Type" %}</dt>
-            <dd>{{ arti.artifact_type|default:"Type is not specified" }}</dd>
+    <h4>{% trans "Workflow details for" %}: {{ application.name }}</h4>
 
-            <dt>{% trans "Git URL" %}</dt>
-            <dd>{{ arti.content }}</dd>
-
-            <dt>{% trans "Language Pack" %}</dt>
-            <dd>{{ arti.language_pack }}</dd>
-        </dl>
-        {% empty %}
-          <dd>None</dd>
+        <hr class="header_rule">
+        <dl class="dl-horizontal">
+        {% for workflow in workflows %}
+            <dt>{% trans "Workflow ID" %}</dt>
+            <dd>{{ workflow.wf_id }}</dd>
+            <dt>{% trans "ID" %}</dt>
+            <dd>{{ workflow.id }}</dd>
+            <dt>{% trans "Status" %}</dt>
+            <dd>{{ workflow.status }}</dd>
+            {% empty %}
+            <dd><em>{% trans "No Workflow details." %}</em></dd>
         {% endfor %}
     </dl>
 </div>

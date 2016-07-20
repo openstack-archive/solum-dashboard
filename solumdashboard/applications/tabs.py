@@ -16,6 +16,8 @@
 from django.utils.translation import ugettext_lazy as _
 from horizon import tabs
 
+from solumclient.v1 import workflow as cli_wf
+
 from solumdashboard.api.client import client as solumclient
 
 
@@ -27,8 +29,17 @@ class GeneralTab(tabs.Tab):
     def get_context_data(self, request):
         app_id = self.tab_group.kwargs['application_id']
         solum = solumclient(request)
-        plan = solum.plans.get(plan_id=app_id)
-        return {"application": plan}
+        app = solum.apps.find(name_or_id=app_id)
+
+        app.trigger = app.trigger_actions
+        app.workflow = app.workflow_config
+        if app.scale_config.get(app.name, ''):
+            app.target_instances = app.scale_config[app.name].get('target', '')
+
+        workflowman = cli_wf.WorkflowManager(solum, app_id=app_id)
+        workflows = workflowman.list()
+
+        return {"application": app, "workflows": workflows}
 
 
 class AppDetailsTabs(tabs.TabGroup):
