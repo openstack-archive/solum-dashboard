@@ -16,7 +16,11 @@
 from django.core import urlresolvers
 from django.utils import http
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ungettext_lazy
+
 from horizon import tables
+
+from solumclient.v1 import app as cli_app
 
 from solumdashboard.api.client import client as solumclient
 
@@ -41,22 +45,31 @@ class LaunchApplication(tables.LinkAction):
         return "?".join([base_url, params])
 
 
-class DeleteApplication(tables.BatchAction):
+class DeleteApplication(tables.DeleteAction):
     name = "delete"
-    verbose_name = _("Delete Application")
-    classes = ("btn-terminate", "btn-danger")
 
-    action_present = _("Delete")
-    action_past = _("Deleted")
-    data_type_singular = _("Application")
-    data_type_plural = _("Applications")
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Delete Application",
+            u"Delete Applications",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Deleted Application",
+            u"Deleted Applications",
+            count
+        )
 
     def allowed(self, request, template):
         return True
 
-    def action(self, request, application_id):
+    def delete(self, request, application_id):
         solum = solumclient(request)
-        solum.plans.delete(plan_id=application_id)
+        cli_app.AppManager(solum).delete(app_id=application_id)
 
 
 class ViewApplication(tables.LinkAction):
