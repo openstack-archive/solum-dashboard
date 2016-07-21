@@ -1,0 +1,8 @@
+{% extends 'horizon/common/_modal_form.html' %}
+{% load i18n %}
+
+{% block form_id %}{% endblock %}
+{% block form_action %}{% url 'horizon:solum:applications:scale' application_id %}{% endblock %}
+
+{% block modal-header %}{% trans "Scale Application" %}{% endblock %}
+{% block modal_id %}scale_application_modal{% endblock %}

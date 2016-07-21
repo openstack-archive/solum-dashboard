@@ -31,6 +31,13 @@ class CreateApplication(tables.LinkAction):
     classes = ("btn-launch", "ajax-modal")
 
 
+class ScaleApplication(tables.LinkAction):
+    name = "scale"
+    verbose_name = _("Scale Application")
+    url = "horizon:solum:applications:scale"
+    classes = ("btn-launch", "ajax-modal")
+
+
 class LaunchApplication(tables.LinkAction):
     name = "build-and-deploy"
     verbose_name = _("Build and Deploy Application")
@@ -98,4 +105,4 @@ class ApplicationsTable(tables.DataTable):
         verbose_name = _("Applications")
         table_actions = (CreateApplication, DeleteApplication)
         row_actions = (ViewApplicationLogs, LaunchApplication,
-                       DeleteApplication)
+                       DeleteApplication, ScaleApplication)

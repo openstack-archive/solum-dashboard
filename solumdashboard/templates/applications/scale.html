@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Scale Application" %}{% endblock %}
+
+{% block page_header %}
+  {% include 'horizon/common/_page_header.html' with title=_('Scale Application') %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'applications/_scale.html' %}
+{% endblock %}

@@ -51,6 +51,25 @@ class CreateView(forms.ModalFormView):
     success_url = reverse_lazy("horizon:solum:applications:index")
 
 
+class ScaleView(forms.ModalFormView):
+    form_class = app_forms.ScaleForm
+    template_name = "applications/scale.html"
+    modal_header = _("Scale Application")
+    page_title = _("Scale Application")
+    submit_url = reverse_lazy('horizon:solum:applications:scale')
+    success_url = reverse_lazy("horizon:solum:applications:index")
+    failure_url = reverse_lazy("horizon:solum:applications:index")
+
+    def get_context_data(self, **kwargs):
+        context = super(ScaleView, self).get_context_data(**kwargs)
+        context["application_id"] = self.kwargs["application_id"]
+        return context
+
+    def get_initial(self):
+        application_id = self.kwargs['application_id']
+        return {'application_id': application_id}
+
+
 class DetailView(tabs.TabView):
     template_name = 'applications/detail.html'
     tab_group_class = _tabs.AppDetailsTabs

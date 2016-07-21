@@ -30,6 +30,25 @@ from solumdashboard.api.client import client as solumclient
 LOG = logging.getLogger(__name__)
 
 
+class ScaleForm(forms.SelfHandlingForm):
+    target = forms.IntegerField(label=_("Target"), required=True)
+
+    def handle(self, request, data):
+        app_id = self.initial.get('application_id')
+        LOG.info('ScaleApplication %s' % data)
+
+        if data["target"] <= 0:
+            exceptions.handle(self.request,
+                              _("Scale target must be greater than zero"))
+
+        solum = solumclient(request)
+        actions = ['scale']
+        cli_wf.WorkflowManager(solum, app_id=app_id).create(
+            actions=actions)
+
+        return True
+
+
 class CreateForm(forms.SelfHandlingForm):
     source = forms.ChoiceField(
         label=_('Source'),
