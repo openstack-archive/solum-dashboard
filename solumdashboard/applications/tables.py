@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.core import urlresolvers
-from django.utils import http
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
@@ -39,11 +37,8 @@ class LaunchApplication(tables.LinkAction):
     url = "horizon:solum:applications:launch"
     classes = ("btn-launch", "ajax-modal")
 
-    def get_link_url(self, datum):
-        base_url = urlresolvers.reverse(self.url)
-
-        params = http.urlencode({"application_id": datum.id})
-        return "?".join([base_url, params])
+    def allowed(self, request, package):
+        return True
 
 
 class DeleteApplication(tables.DeleteAction):

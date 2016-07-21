@@ -22,6 +22,7 @@ from horizon import forms
 from horizon import messages
 
 from solumclient.common import yamlutils
+from solumclient.v1 import workflow as cli_wf
 
 from solumdashboard.api.client import client as solumclient
 
@@ -153,3 +154,25 @@ class CreateForm(forms.SelfHandlingForm):
             redirect = reverse("horizon:solum:applications:index")
             exceptions.handle(request, msg, redirect=redirect)
             return False
+
+
+class LaunchForm(forms.SelfHandlingForm):
+    du_id = forms.CharField(label=_("ID of the DU image"), required=False)
+
+    def handle(self, request, data):
+        app_id = self.initial.get('application_id')
+        LOG.info('LaunchApplication %s' % data)
+        solum = solumclient(request)
+
+        if data["du_id"]:
+            actions = ['deploy']
+            cli_wf.WorkflowManager(
+                solum, app_id=app_id).create(
+                    actions=actions, du_id=data["du_id"])
+        else:
+            actions = ['unittest', 'build', 'deploy']
+            cli_wf.WorkflowManager(
+                solum, app_id=app_id).create(
+                    actions=actions)
+
+        return True

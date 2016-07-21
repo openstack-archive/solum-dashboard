@@ -20,13 +20,11 @@ from horizon import exceptions
 from horizon import forms
 from horizon import tables
 from horizon import tabs
-from horizon import workflows
 
 from solumdashboard.api.client import client as solumclient
 from solumdashboard.applications import forms as app_forms
 from solumdashboard.applications import tables as app_tables
 import solumdashboard.applications.tabs as _tabs
-import solumdashboard.applications.workflows.launch as launch_flow
 
 
 class IndexView(tables.DataTableView):
@@ -58,12 +56,19 @@ class DetailView(tabs.TabView):
     tab_group_class = _tabs.AppDetailsTabs
 
 
-class LaunchApplicationView(workflows.WorkflowView):
-    workflow_class = launch_flow.LaunchApplication
-    success_url = "horizon:solum:assemblies"
-    classes = ("ajax-modal")
+class LaunchView(forms.ModalFormView):
+    form_class = app_forms.LaunchForm
     template_name = "applications/launch.html"
+    modal_header = _("Launch Application")
+    page_title = _("Launch Application")
+    success_url = reverse_lazy("horizon:solum:applications:index")
+    failure_url = reverse_lazy("horizon:solum:applications:index")
 
     def get_context_data(self, **kwargs):
-        context = super(LaunchApplicationView, self).get_context_data(**kwargs)
+        context = super(LaunchView, self).get_context_data(**kwargs)
+        context["application_id"] = self.kwargs["application_id"]
         return context
+
+    def get_initial(self):
+        application_id = self.kwargs['application_id']
+        return {'application_id': application_id}

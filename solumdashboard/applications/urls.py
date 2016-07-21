@@ -29,7 +29,9 @@ urlpatterns = patterns(
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^$', views.IndexView.as_view(), name='applications'),
     url(r'^create$', views.CreateView.as_view(), name='create'),
-    url(r'^launch$', views.LaunchApplicationView.as_view(),
+    url(r'^launch/(?P<application_id>[^/]+)$', views.LaunchView.as_view(),
         name='launch'),
     url(r'^detail/(?P<application_id>[^/]+)$',
-        views.DetailView.as_view(), name='detail'))
+        views.DetailView.as_view(), name='detail'),
+    url(r'^log/(?P<application_id>[^/]+)$', views.LogView.as_view(),
+        name='log'))
