@@ -23,6 +23,7 @@ from horizon import tables
 from solumclient.v1 import app as cli_app
 
 from solumdashboard.api.client import client as solumclient
+from solumdashboard.applications import tabs
 
 
 class CreateApplication(tables.LinkAction):
@@ -72,11 +73,17 @@ class DeleteApplication(tables.DeleteAction):
         cli_app.AppManager(solum).delete(app_id=application_id)
 
 
-class ViewApplication(tables.LinkAction):
+class ViewApplicationLogs(tables.LinkAction):
     name = "view"
-    verbose_name = _("View")
+    verbose_name = _("View Application Logs")
     url = "horizon:solum:applications:detail"
     classes = ("btn-edit",)
+
+    def get_link_url(self, datum):
+        base_url = super(ViewApplicationLogs, self).get_link_url(datum)
+        tab_query_string = tabs.LogTab(
+            tabs.AppDetailsTabs).get_query_string()
+        return "?".join([base_url, tab_query_string])
 
 
 class ApplicationsTable(tables.DataTable):
@@ -95,4 +102,5 @@ class ApplicationsTable(tables.DataTable):
         name = "applications"
         verbose_name = _("Applications")
         table_actions = (CreateApplication, DeleteApplication)
-        row_actions = (ViewApplication, LaunchApplication, DeleteApplication)
+        row_actions = (ViewApplicationLogs, LaunchApplication,
+                       DeleteApplication)

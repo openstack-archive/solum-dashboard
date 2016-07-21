@@ -14,6 +14,9 @@
 # limitations under the License.
 
 from django.utils.translation import ugettext_lazy as _
+
+import json
+
 from horizon import tabs
 
 from solumclient.v1 import workflow as cli_wf
@@ -42,7 +45,37 @@ class GeneralTab(tabs.Tab):
         return {"application": app, "workflows": workflows}
 
 
+class LogTab(tabs.Tab):
+    name = _("Logs")
+    slug = "application_logs_tab"
+    template_name = ("applications/_log.html")
+
+    def get_context_data(self, request):
+        app_id = self.tab_group.kwargs['application_id']
+        solum = solumclient(request)
+        app = solum.apps.find(name_or_id=app_id)
+
+        workflowman = cli_wf.WorkflowManager(solum, app_id=app_id)
+        workflows = workflowman.list()
+
+        logs_list = []
+
+        for workflow in workflows:
+            revision = workflow.wf_id
+            loglist = workflowman.logs(revision_or_id=revision)
+            for log in loglist:
+                logs_list.append(log)
+                strategy_info = json.loads(log.strategy_info)
+                if log.strategy == 'local':
+                    log.local_storage = log.location
+                elif log.strategy == 'swift':
+                    log.swift_container = strategy_info['container']
+                    log.swift_path = log.location
+
+        return {"logs": logs_list, "application": app}
+
+
 class AppDetailsTabs(tabs.TabGroup):
     slug = "application_details"
-    tabs = (GeneralTab,)
+    tabs = (GeneralTab, LogTab)
     sticky = True

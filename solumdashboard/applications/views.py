@@ -57,13 +57,6 @@ class DetailView(tabs.TabView):
     template_name = 'applications/detail.html'
     tab_group_class = _tabs.AppDetailsTabs
 
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        return super(DetailView, self).get_context_data(**kwargs)
-
-    def get_data(self):
-        pass
-
 
 class LaunchApplicationView(workflows.WorkflowView):
     workflow_class = launch_flow.LaunchApplication

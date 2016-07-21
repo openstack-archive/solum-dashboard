@@ -1,0 +1,37 @@
+{% load i18n %}
+<h3>{% trans "Application" %}</h3>
+<div class="status detail">
+    <dl class="dl-horizontal">
+        <h4>{% trans "Log details for " %}: {{ application.name }}</h4>
+
+        {% for log in loglist %}
+
+        <dl class="well">
+            <dt>{% trans "Resource UUID" %}</dt>
+            <dd>{{ log.resource_uuid }}</dd>
+
+            <dt>{% trans "Created at" %}</dt>
+            <dd>{{ log.created_at }}</dd>
+
+            {% if log.local_storage %}
+                <dt>{% trans "Local Storage" %}</dt>
+                <dd>{{ log.local_storage }}</dd>
+
+            {% elif log.swift_container %}
+                <dt>{% trans "Swift Container" %}</dt>
+                <dd>{{ log.swift_container }}</dd>
+                <dt>{% trans "Swift Path" %}</dt>
+                <dd>{{ log.swift_path }}</dd>
+
+            {% else %}
+                <dt>{% trans "Location" %}</dt>
+                <dd>{{ log.location }}</dd>
+
+            {% endif %}
+        </dl>
+
+        {% empty %}
+          <dd>None</dd>
+        {% endfor %}
+    </dl>
+</div>
