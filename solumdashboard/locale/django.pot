@@ -1,0 +1,219 @@
+# Translations template for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-07-30 07:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: solumdashboard/dashboard.py:22
+#: solumdashboard/templates/applications/index.html:3
+#: solumdashboard/templates/assemblies/index.html:3
+msgid "Solum"
+msgstr ""
+
+#: solumdashboard/applications/panel.py:24
+#: solumdashboard/applications/tables.py:52
+#: solumdashboard/applications/tables.py:81
+msgid "Applications"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:26
+msgid "New Application"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:33
+msgid "Build and Deploy Application"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:46
+msgid "Delete Application"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:49
+#: solumdashboard/assemblies/tables.py:35
+msgid "Delete"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:50
+#: solumdashboard/assemblies/tables.py:36
+msgid "Deleted"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:51
+#: solumdashboard/assemblies/tables.py:59
+#: solumdashboard/templates/applications/_detail.html:2
+#: solumdashboard/templates/assemblies/_detail.html:2
+msgid "Application"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:64
+#: solumdashboard/assemblies/tables.py:50
+msgid "View"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:70
+#: solumdashboard/assemblies/tables.py:56
+msgid "UUID"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:72
+#: solumdashboard/assemblies/tables.py:58
+#: solumdashboard/templates/applications/_detail.html:5
+#: solumdashboard/templates/assemblies/_detail.html:5
+msgid "Name"
+msgstr ""
+
+#: solumdashboard/applications/tables.py:74
+#: solumdashboard/applications/workflows/create.py:34
+#: solumdashboard/applications/workflows/launch.py:26
+#: solumdashboard/assemblies/tables.py:61
+#: solumdashboard/templates/applications/_detail.html:9
+#: solumdashboard/templates/assemblies/_detail.html:9
+msgid "Description"
+msgstr ""
+
+#: solumdashboard/applications/tabs.py:23 solumdashboard/assemblies/tabs.py:23
+msgid "General Info"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:30
+#: solumdashboard/templates/applications/_detail.html:20
+msgid "Git URL"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:32
+msgid "App Name"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:40
+msgid "Select git url for the application"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:51
+msgid "Create Application"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:52
+msgid "Create"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:53
+msgid "Created"
+msgstr ""
+
+#: solumdashboard/applications/workflows/create.py:54
+msgid "Could not create"
+msgstr ""
+
+#: solumdashboard/applications/workflows/launch.py:24
+msgid "Assembly Name"
+msgstr ""
+
+#: solumdashboard/applications/workflows/launch.py:44
+msgid "Configure name and description"
+msgstr ""
+
+#: solumdashboard/applications/workflows/launch.py:55
+msgid "Launch App"
+msgstr ""
+
+#: solumdashboard/applications/workflows/launch.py:56
+msgid "Launch"
+msgstr ""
+
+#: solumdashboard/applications/workflows/launch.py:57
+msgid "App launched"
+msgstr ""
+
+#: solumdashboard/applications/workflows/launch.py:58
+msgid "Could not launch app"
+msgstr ""
+
+#: solumdashboard/assemblies/panel.py:24 solumdashboard/assemblies/tables.py:38
+#: solumdashboard/assemblies/tables.py:68
+msgid "Assemblies"
+msgstr ""
+
+#: solumdashboard/assemblies/tables.py:25
+msgid "New Assembly"
+msgstr ""
+
+#: solumdashboard/assemblies/tables.py:32
+msgid "Delete Assembly"
+msgstr ""
+
+#: solumdashboard/assemblies/tables.py:37
+msgid "Assembly"
+msgstr ""
+
+#: solumdashboard/templates/applications/_detail.html:7
+#: solumdashboard/templates/assemblies/_detail.html:7
+msgid "ID"
+msgstr ""
+
+#: solumdashboard/templates/applications/_detail.html:15
+msgid "Artifact"
+msgstr ""
+
+#: solumdashboard/templates/applications/_detail.html:17
+msgid "Type"
+msgstr ""
+
+#: solumdashboard/templates/applications/_detail.html:23
+msgid "Language Pack"
+msgstr ""
+
+#: solumdashboard/templates/applications/detail.html:3
+#: solumdashboard/templates/applications/detail.html:6
+msgid "Application Details"
+msgstr ""
+
+#: solumdashboard/templates/applications/index.html:6
+msgid "Solum - Applications"
+msgstr ""
+
+#: solumdashboard/templates/applications/launch.html:3
+msgid "Launch Application"
+msgstr ""
+
+#: solumdashboard/templates/applications/launch.html:6
+msgid "Solum - Launch Application"
+msgstr ""
+
+#: solumdashboard/templates/assemblies/_detail.html:11
+msgid "Status"
+msgstr ""
+
+#: solumdashboard/templates/assemblies/_detail.html:13
+msgid "URI"
+msgstr ""
+
+#: solumdashboard/templates/assemblies/_detail.html:15
+msgid "Trigger URI"
+msgstr ""
+
+#: solumdashboard/templates/assemblies/detail.html:3
+#: solumdashboard/templates/assemblies/detail.html:6
+msgid "Assembly Details"
+msgstr ""
+
+#: solumdashboard/templates/assemblies/index.html:6
+msgid "Solum - Assemblies"
+msgstr ""
+
+#: solumdashboard/tests/settings.py:67
+msgid "Password must be between 8 and 18 characters."
+msgstr ""
+
