@@ -13,17 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
+from horizon import forms
 from horizon import tables
 from horizon import tabs
 from horizon import workflows
 
 from solumdashboard.api.client import client as solumclient
+from solumdashboard.applications import forms as app_forms
 from solumdashboard.applications import tables as app_tables
 import solumdashboard.applications.tabs as _tabs
-import solumdashboard.applications.workflows.create as create_flow
 import solumdashboard.applications.workflows.launch as launch_flow
 
 
@@ -42,12 +44,13 @@ class IndexView(tables.DataTableView):
         return apps
 
 
-class CreateView(workflows.WorkflowView):
-    workflow_class = create_flow.CreateApplication
-    success_url = \
-        "horizon:solum:applications:create"
-    classes = ("ajax-modal")
+class CreateView(forms.ModalFormView):
+    form_class = app_forms.CreateForm
     template_name = 'applications/create.html'
+    modal_header = _("Create Application")
+    page_title = _("Create Application")
+    submit_url = reverse_lazy('horizon:solum:applications:create')
+    success_url = reverse_lazy("horizon:solum:applications:index")
 
 
 class DetailView(tabs.TabView):
