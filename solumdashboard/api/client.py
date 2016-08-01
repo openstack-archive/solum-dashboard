@@ -60,6 +60,6 @@ def client(request):
     endpoint_type = get_horizon_parameter('OPENSTACK_ENDPOINT_TYPE',
                                           'internalURL')
     auth_url = keystone._get_endpoint_url(request, endpoint_type)
-    return api_client.Client('1', endpoint=get_solum_url(request),
+    return api_client.Client(1, endpoint=get_solum_url(request),
                              token=request.user.token.id,
                              auth_url=auth_url)
