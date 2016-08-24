@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.utils.translation import ugettext_lazy as _
+
 from horizon import exceptions
 from horizon import tables
 from horizon import tabs
@@ -32,11 +34,12 @@ class IndexView(tables.DataTableView):
     def get_data(self):
         try:
             solum = solumclient(self.request)
-            plans = solum.plans.list()
+            apps = solum.apps.list()
         except Exception:
-            plans = []
-            exceptions.handle(self.request, 'Unable to retrieve plans.')
-        return plans
+            apps = []
+            exceptions.handle(self.request,
+                              _('Unable to retrieve apps.'))
+        return apps
 
 
 class CreateView(workflows.WorkflowView):
