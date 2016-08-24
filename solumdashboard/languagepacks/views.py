@@ -13,17 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 import json
 
 from horizon import exceptions
+from horizon import forms
 from horizon import tables
 from horizon import views
 
 from solumclient.v1 import languagepack as cli_lp
 
 from solumdashboard.api.client import client as solumclient
+from solumdashboard.languagepacks import forms as lp_forms
 from solumdashboard.languagepacks import tables as lp_tables
 
 
@@ -71,3 +74,12 @@ class DetailView(views.HorizonTemplateView):
                 log.swift_path = log.location
 
         return languagepack, loglist
+
+
+class CreateView(forms.ModalFormView):
+    form_class = lp_forms.CreateForm
+    template_name = 'languagepacks/create.html'
+    modal_header = _("Create Languagepack")
+    page_title = _("Create Languagepack")
+    submit_url = reverse_lazy("horizon:solum:languagepacks:create")
+    success_url = reverse_lazy("horizon:solum:languagepacks:index")

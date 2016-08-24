@@ -48,6 +48,13 @@ class DeleteLanguagepack(tables.DeleteAction):
         solum.languagepacks.delete(lp_id=languagepack_id)
 
 
+class CreateLanguagepack(tables.LinkAction):
+    name = "create"
+    verbose_name = _("New Languagepack")
+    url = "horizon:solum:languagepacks:create"
+    classes = ("btn-launch", "ajax-modal")
+
+
 class LanguagepacksTable(tables.DataTable):
     uuid = tables.Column("uuid", verbose_name=_("UUID"),
                          link=("horizon:solum:languagepacks:detail"))
@@ -62,5 +69,5 @@ class LanguagepacksTable(tables.DataTable):
     class Meta:
         name = "languagepacks"
         verbose_name = _("Languagepacks")
-        table_actions = (DeleteLanguagepack,)
+        table_actions = (CreateLanguagepack, DeleteLanguagepack)
         row_actions = (DeleteLanguagepack,)
