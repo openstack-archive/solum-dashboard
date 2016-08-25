@@ -66,7 +66,7 @@ class LanguagepacksTable(tables.DataTable):
     def get_object_id(self, lp):
         return lp.uuid
 
-    class Meta:
+    class Meta(object):
         name = "languagepacks"
         verbose_name = _("Languagepacks")
         table_actions = (CreateLanguagepack, DeleteLanguagepack)
