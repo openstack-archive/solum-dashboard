@@ -32,6 +32,7 @@ import solumdashboard.applications.workflows.update as update_flow
 class IndexView(tables.DataTableView):
     table_class = app_tables.ApplicationsTable
     template_name = 'applications/index.html'
+    page_title = _("Application")
 
     def get_data(self):
         try:
