@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.utils.translation import ugettext_lazy as _
+
 from horizon import exceptions
 from horizon import tables
 from horizon import tabs
@@ -25,6 +27,7 @@ import solumdashboard.assemblies.tabs as _tabs
 class IndexView(tables.DataTableView):
     table_class = assem_tables.AssembliesTable
     template_name = 'assemblies/index.html'
+    page_title = _("Assemblies")
 
     def get_data(self):
         try:

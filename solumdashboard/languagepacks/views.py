@@ -33,6 +33,7 @@ from solumdashboard.languagepacks import tables as lp_tables
 class IndexView(tables.DataTableView):
     table_class = lp_tables.LanguagepacksTable
     template_name = 'languagepacks/index.html'
+    page_title = _("Languagepacks")
 
     def get_data(self):
         try:
