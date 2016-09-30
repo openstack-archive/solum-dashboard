@@ -26,7 +26,7 @@ from solumdashboard.api.client import client as solumclient
 from solumdashboard.applications import forms as app_forms
 from solumdashboard.applications import tables as app_tables
 import solumdashboard.applications.tabs as _tabs
-import solumdashboard.applications.workflows.update as update_flow
+from solumdashboard.applications import workflows as update_flow
 
 
 class IndexView(tables.DataTableView):
