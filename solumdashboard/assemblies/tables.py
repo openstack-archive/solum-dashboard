@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ungettext_lazy
 
 from horizon import tables
 
@@ -27,15 +28,23 @@ class CreateAssembly(tables.LinkAction):
     classes = ("btn-launch", "ajax-modal")
 
 
-class DeleteAssembly(tables.BatchAction):
-    name = "delete"
-    verbose_name = _("Delete Assembly")
-    classes = ("btn-terminate", "btn-danger")
+class DeleteAssembly(tables.DeleteAction):
 
-    action_present = _("Delete")
-    action_past = _("Deleted")
-    data_type_singular = _("Assembly")
-    data_type_plural = _("Assemblies")
+    @staticmethod
+    def action_present(count):
+        return ungettext_lazy(
+            u"Delete Assembly",
+            u"Delete Assemblies",
+            count
+        )
+
+    @staticmethod
+    def action_past(count):
+        return ungettext_lazy(
+            u"Scheduled deletion of Assembly",
+            u"Scheduled deletion of Assemblies",
+            count
+        )
 
     def allowed(self, request, template):
         return True
