@@ -32,7 +32,7 @@ from solumdashboard.applications import workflows as update_flow
 class IndexView(tables.DataTableView):
     table_class = app_tables.ApplicationsTable
     template_name = 'applications/index.html'
-    page_title = _("Application")
+    page_title = _("Applications")
 
     def get_data(self):
         try:
@@ -97,6 +97,15 @@ class UpdateView(workflows.WorkflowView):
 class DetailView(tabs.TabView):
     template_name = 'applications/detail.html'
     tab_group_class = _tabs.AppDetailsTabs
+    page_title = "{{ app.name|default:app.id }}"
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        application_id = self.kwargs['application_id']
+        solum = solumclient(self.request)
+        app = solum.apps.find(name_or_id=application_id)
+        context["app"] = app
+        return context
 
 
 class LaunchView(forms.ModalFormView):

@@ -42,10 +42,15 @@ class IndexView(tables.DataTableView):
 class DetailView(tabs.TabView):
     template_name = 'assemblies/detail.html'
     tab_group_class = _tabs.AssemDetailsTabs
+    page_title = "{{ assem.name|default:assem.uuid }}"
 
     def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        return super(DetailView, self).get_context_data(**kwargs)
+        context = super(DetailView, self).get_context_data(**kwargs)
+        assem_id = kwargs['assembly_id']
+        solum = solumclient(self.request)
+        assem = solum.assemblies.get(assembly_id=assem_id)
+        context["assem"] = assem
+        return context
 
     def get_data(self):
         pass
