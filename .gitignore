@@ -20,6 +20,7 @@ doc/source/sourcecode
 /static/
 .venv
 .tox
+.idea
 build
 dist
 AUTHORS
