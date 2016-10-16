@@ -36,7 +36,7 @@ class GeneralTab(tabs.Tab):
 
         app.trigger = app.trigger_actions
         app.workflow = app.workflow_config
-        if app.scale_config.get(app.name, ''):
+        if app.scale_config:
             app.target_instances = app.scale_config[app.name].get('target', '')
 
         workflowman = cli_wf.WorkflowManager(solum, app_id=app_id)
