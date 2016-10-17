@@ -111,5 +111,5 @@ class ApplicationsTable(tables.DataTable):
         name = "applications"
         verbose_name = _("Applications")
         table_actions = (CreateApplication, DeleteApplication)
-        row_actions = (ViewApplicationLogs, LaunchApplication,
+        row_actions = (LaunchApplication, ViewApplicationLogs,
                        DeleteApplication, ScaleApplication, UpdateApplication)
