@@ -6,3 +6,10 @@
 
 {% block modal-header %}{% trans "Deploy Application" %}{% endblock %}
 {% block modal_id %}launch_application_modal{% endblock %}
+
+{% block modal-body-right %}
+  <h3>{% trans "Description:" %}</h3>
+  <p>
+      {% trans "The ID of the DU image is optional, You can deploy the applications without this." %}
+  </p>
+{% endblock %}
