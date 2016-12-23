@@ -13,19 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.conf.urls import url
+
 import solumdashboard.applications.views as views
-from solumdashboard.utils import importutils
-
-urls = importutils.import_any('django.conf.urls.defaults',
-                              'django.conf.urls')
 
 
-patterns = urls.patterns
-url = urls.url
-
-
-urlpatterns = patterns(
-    '',
+urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
     url(r'^$', views.IndexView.as_view(), name='applications'),
     url(r'^create$', views.CreateView.as_view(), name='create'),
@@ -36,4 +29,5 @@ urlpatterns = patterns(
     url(r'^scale/(?P<application_id>[^/]+)$', views.ScaleView.as_view(),
         name='scale'),
     url(r'^update/(?P<application_id>[^/]+)$', views.UpdateView.as_view(),
-        name='update'))
+        name='update')
+]

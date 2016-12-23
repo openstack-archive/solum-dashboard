@@ -13,22 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.conf.urls import url
+
 import solumdashboard.assemblies.views as views
-from solumdashboard.utils import importutils
-
-urls = importutils.import_any('django.conf.urls.defaults',
-                              'django.conf.urls')
 
 
-patterns = urls.patterns
-url = urls.url
-
-
-urlpatterns = patterns('',
-                       url(r'^$', views.IndexView.as_view(),
-                           name='index'),
-                       url(r'^$', views.IndexView.as_view(),
-                           name='assemblies'),
-                       url(r'^(?P<assembly_id>[^/]+)$',
-                           views.DetailView.as_view(),
-                           name='detail'))
+urlpatterns = [
+    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', views.IndexView.as_view(), name='assemblies'),
+    url(r'^(?P<assembly_id>[^/]+)$', views.DetailView.as_view(), name='detail')
+]
