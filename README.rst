@@ -22,5 +22,5 @@ Enter these commands in your terminal
 
  sudo pip install -e /opt/stack/solum-dashboard
  cd /opt/stack/horizon/openstack_dashboard/local/enabled
- ln -s /opt/stack/solum-dashboard/_50_solum.py.example _50_solum.py
+ ln -s /opt/stack/solum-dashboard/solumdashboard/local/enabled/_50_solum.py _50_solum.py
  sudo service apache2 restart
