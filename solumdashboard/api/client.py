@@ -13,14 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
-
 from horizon import exceptions
 
 from solumclient import client as api_client
 
 from openstack_dashboard.api import base
 from openstack_dashboard.api import keystone
+from oslo_log import log as logging
 
 LOG = logging.getLogger(__name__)
 

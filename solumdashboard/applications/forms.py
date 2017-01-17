@@ -13,14 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
-
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from horizon import exceptions
 from horizon import forms
 from horizon import messages
 
+from oslo_log import log as logging
 from solumclient.common import yamlutils
 from solumclient.v1 import workflow as cli_wf
 

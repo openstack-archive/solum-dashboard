@@ -14,7 +14,6 @@
 # limitations under the License.
 
 import json
-import logging
 
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -23,6 +22,7 @@ from horizon import exceptions
 from horizon import forms
 from horizon import messages
 
+from oslo_log import log as logging
 from solumclient.common import yamlutils
 
 from solumdashboard.api.client import client as solumclient
