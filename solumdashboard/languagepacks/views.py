@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
@@ -61,10 +62,17 @@ class DetailView(views.HorizonTemplateView):
     def get_data(self):
         lp_id = self.kwargs['languagepack_id']
         solum = solumclient(self.request)
-
-        languagepack = solum.languagepacks.find(name_or_id=lp_id)
-        loglist = cli_lp.LanguagePackManager(solum).logs(
-            lp_id=lp_id)
+        languagepack = None
+        loglist = []
+        try:
+            languagepack = solum.languagepacks.find(name_or_id=lp_id)
+            loglist = cli_lp.LanguagePackManager(solum).logs(
+                lp_id=lp_id)
+        except Exception:
+            INDEX_URL = 'horizon:solum:languagepacks:index'
+            exceptions.handle(self.request,
+                              _('Unable to retrieve languagepack details.'),
+                              redirect=reverse(INDEX_URL))
 
         for log in loglist:
             strategy_info = json.loads(log.strategy_info)
