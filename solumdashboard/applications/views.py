@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.core.urlresolvers import reverse
 from django.core.urlresolvers import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
@@ -102,8 +103,15 @@ class DetailView(tabs.TabView):
     def get_context_data(self, **kwargs):
         context = super(DetailView, self).get_context_data(**kwargs)
         application_id = self.kwargs['application_id']
-        solum = solumclient(self.request)
-        app = solum.apps.find(name_or_id=application_id)
+        app = None
+        try:
+            solum = solumclient(self.request)
+            app = solum.apps.find(name_or_id=application_id)
+        except Exception:
+            INDEX_URL = 'horizon:solum:applications:index'
+            exceptions.handle(self.request,
+                              _('Unable to retrieve application details.'),
+                              redirect=reverse(INDEX_URL))
         context["app"] = app
         return context
 
