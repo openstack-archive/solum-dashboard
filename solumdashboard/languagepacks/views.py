@@ -57,6 +57,8 @@ class DetailView(views.HorizonTemplateView):
         languagepack, loglist = self.get_data()
         context["languagepack"] = languagepack
         context["loglist"] = loglist
+        table = lp_tables.LanguagepacksTable(self.request)
+        context["actions"] = table.render_row_actions(languagepack)
         return context
 
     def get_data(self):
