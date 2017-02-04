@@ -23,7 +23,7 @@ like:
 import yaml
 
 with open("mistral_dsl.yaml", "r") as fptr
-    data = yaml.load(fptr)
+    data = yaml.safe_load(fptr)
 
 Important note:
 This code expects that the loading code performs some basic YAML validation
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     import yaml
 
     with open("dsl.yaml", "r") as FPTR:
-        DATA = yaml.load(FPTR)
+        DATA = yaml.safe_load(FPTR)
     print("\nMistral Task workflow:")
     RET_DICT = get_mistral_tasks(DATA)
     for VAL in RET_DICT:
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     # Heat required input
     print("\nHeat required inputs:")
     with open("hot.yaml", "r") as FPTR:
-        DATA = yaml.load(FPTR)
+        DATA = yaml.safe_load(FPTR)
     RET_DICT = get_heat_required_input(DATA)
     for VAL in RET_DICT:
         print("%s - %s, %s, %s" % (VAL[0], VAL[1], VAL[2], VAL[3]))
