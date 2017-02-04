@@ -113,6 +113,8 @@ class DetailView(tabs.TabView):
                               _('Unable to retrieve application details.'),
                               redirect=reverse(INDEX_URL))
         context["app"] = app
+        table = app_tables.ApplicationsTable(self.request)
+        context["actions"] = table.render_row_actions(app)
         return context
 
 
