@@ -69,7 +69,8 @@ class CreateForm(forms.SelfHandlingForm):
             'data-source-app_file': _('Local app file location')
         })
     )
-    name = forms.CharField(label=_("Application Name"), required=False)
+    name = forms.CharField(label=_("Application Name"), required=False,
+                           max_length=100)
     languagepack = forms.CharField(label=_("Languagepack"), required=False)
     git_url = forms.URLField(label=_("Source repository"), required=False)
     run_cmd = forms.CharField(label=_("Application entry point"),

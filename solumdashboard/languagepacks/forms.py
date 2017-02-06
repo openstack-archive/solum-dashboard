@@ -33,8 +33,9 @@ LOG = logging.getLogger(__name__)
 
 class CreateForm(forms.SelfHandlingForm):
     source_uri = forms.CharField(label=_("Source URI"))
-    name = forms.CharField(label=_("Languagepack Name"))
-    description = forms.CharField(label=_("Description"), required=False)
+    name = forms.CharField(label=_("Languagepack Name"), max_length=100)
+    description = forms.CharField(label=_("Description"), required=False,
+                                  max_length=255)
     param_file = forms.FileField(label=_("Parameter File"),
                                  required=False)
     lp_metadata = forms.FileField(label=_("Languagepack Metadata File"),
