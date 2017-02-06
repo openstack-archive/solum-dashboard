@@ -17,6 +17,7 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext_lazy
 
 from horizon import tables
+from horizon.utils import filters
 
 from solumclient.v1 import app as cli_app
 
@@ -99,7 +100,8 @@ class ApplicationsTable(tables.DataTable):
     name = tables.Column('name', verbose_name=_('Name'))
     id = tables.Column('id', verbose_name=_('ID'),
                        link=("horizon:solum:applications:detail"))
-    created_at = tables.Column('created_at', verbose_name=_('Created at'))
+    created_at = tables.Column('created_at', verbose_name=_('Created at'),
+                               filters=(filters.parse_isotime,))
     description = tables.Column('description', verbose_name=_('Description'))
     languagepack = tables.Column('languagepack',
                                  verbose_name=_('Languagepack'))
