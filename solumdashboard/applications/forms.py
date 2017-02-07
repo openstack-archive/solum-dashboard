@@ -30,7 +30,7 @@ LOG = logging.getLogger(__name__)
 
 
 class ScaleForm(forms.SelfHandlingForm):
-    target = forms.IntegerField(label=_("Target"), required=True)
+    target = forms.IntegerField(label=_("Target"))
 
     def handle(self, request, data):
         app_id = self.initial.get('application_id')
