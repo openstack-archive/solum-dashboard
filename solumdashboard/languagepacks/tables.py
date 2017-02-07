@@ -48,6 +48,14 @@ class DeleteLanguagepack(tables.DeleteAction):
         solum.languagepacks.delete(lp_id=languagepack_id)
 
 
+class UpdateRow(tables.Row):
+    ajax = True
+
+    def get_data(self, request, languagepack_id):
+        solum = solumclient(request)
+        return solum.languagepacks.find(name_or_id=languagepack_id)
+
+
 class CreateLanguagepack(tables.LinkAction):
     name = "create"
     verbose_name = _("New Languagepack")
@@ -56,11 +64,19 @@ class CreateLanguagepack(tables.LinkAction):
 
 
 class LanguagepacksTable(tables.DataTable):
+    STATUS_CHOICES = (
+        ("QUEUED", None),
+        ("BUILDING", None),
+        ("ERROR", False),
+        ("READY", True),
+    )
     uuid = tables.Column("uuid", verbose_name=_("UUID"),
                          link=("horizon:solum:languagepacks:detail"))
     name = tables.Column("name", verbose_name=_("Name"))
     description = tables.Column("description", verbose_name=_("Description"))
-    status = tables.Column("status", verbose_name=_("Status"))
+    status = tables.Column("status", verbose_name=_("Status"),
+                           status=True,
+                           status_choices=STATUS_CHOICES)
     source_uri = tables.Column("source_uri", verbose_name=_("Source Uri"))
 
     def get_object_id(self, lp):
@@ -69,5 +85,7 @@ class LanguagepacksTable(tables.DataTable):
     class Meta(object):
         name = "languagepacks"
         verbose_name = _("Languagepacks")
+        row_class = UpdateRow
+        status_columns = ["status"]
         table_actions = (CreateLanguagepack, DeleteLanguagepack)
         row_actions = (DeleteLanguagepack,)
