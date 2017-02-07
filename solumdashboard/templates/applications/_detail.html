@@ -7,9 +7,9 @@
         <dt>{% trans "ID" %}</dt>
         <dd>{{ application.id }}</dd>
         <dt>{% trans "Created at" %}</dt>
-        <dd>{{ application.created_at }}</dd>
+        <dd>{{ application.created_at|parse_isotime }}</dd>
         <dt>{% trans "Updated at" %}</dt>
-        <dd>{{ application.updated_at }}</dd>
+        <dd>{{ application.updated_at|parse_isotime }}</dd>
         <dt>{% trans "Description" %}</dt>
         <dd>{{ application.description|default:"None" }}</dd>
         <dt>{% trans "Languagepack" %}</dt>

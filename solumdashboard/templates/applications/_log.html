@@ -11,7 +11,7 @@
             <dd>{{ log.resource_uuid }}</dd>
 
             <dt>{% trans "Created at" %}</dt>
-            <dd>{{ log.created_at }}</dd>
+            <dd>{{ log.created_at|parse_isotime }}</dd>
 
             {% if log.local_storage %}
                 <dt>{% trans "Local Storage" %}</dt>
