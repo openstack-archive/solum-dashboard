@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from django.conf import settings
+
 from horizon import exceptions
 
 from solumclient import client as api_client
@@ -24,30 +26,11 @@ from oslo_log import log as logging
 LOG = logging.getLogger(__name__)
 
 
-def get_horizon_parameter(name, default_value):
-    import openstack_dashboard.settings
-
-    if hasattr(openstack_dashboard.settings, name):
-        return getattr(openstack_dashboard.settings, name)
-    else:
-        LOG.warning('Parameter %s is not found in local_settings.py, '
-                    'using default "%s"' % (name, default_value))
-        return default_value
-
-
-# These parameters should be defined in Horizon's local_settings.py
-# Example SOLUM_URL - http://localhost:9777
-SOLUM_URL = get_horizon_parameter('SOLUM_URL', None)
-# "type" of Solum service registered in keystone
-SOLUM_SERVICE = get_horizon_parameter('SOLUM_SERVICE',
-                                      'application_deployment')
-
-
 def get_solum_url(request):
-    endpoint = SOLUM_URL
+    endpoint = getattr(settings, 'SOLUM_URL', None)
     if not endpoint:
         try:
-            endpoint = base.url_for(request, SOLUM_SERVICE)
+            endpoint = base.url_for(request, 'application_deployment')
         except exceptions.ServiceCatalogException:
             endpoint = 'http://localhost:9777'
             LOG.warning('Solum API location could not be found in Service '
@@ -56,8 +39,7 @@ def get_solum_url(request):
 
 
 def client(request):
-    endpoint_type = get_horizon_parameter('OPENSTACK_ENDPOINT_TYPE',
-                                          'internalURL')
+    endpoint_type = getattr(settings, 'OPENSTACK_ENDPOINT_TYPE', 'internalURL')
     auth_url = keystone._get_endpoint_url(request, endpoint_type)
     return api_client.Client(1, endpoint=get_solum_url(request),
                              token=request.user.token.id,
