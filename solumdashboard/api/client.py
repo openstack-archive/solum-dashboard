@@ -20,7 +20,6 @@ from horizon import exceptions
 from solumclient import client as api_client
 
 from openstack_dashboard.api import base
-from openstack_dashboard.api import keystone
 from oslo_log import log as logging
 
 LOG = logging.getLogger(__name__)
@@ -39,8 +38,7 @@ def get_solum_url(request):
 
 
 def client(request):
-    endpoint_type = getattr(settings, 'OPENSTACK_ENDPOINT_TYPE', 'internalURL')
-    auth_url = keystone._get_endpoint_url(request, endpoint_type)
+    auth_url = getattr(settings, 'OPENSTACK_KEYSTONE_URL')
     return api_client.Client(1, endpoint=get_solum_url(request),
                              token=request.user.token.id,
                              auth_url=auth_url)
