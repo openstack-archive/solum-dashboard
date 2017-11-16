@@ -11,7 +11,7 @@ pylint==1.4.5 # GPLv2
 selenium>=2.50.1 # Apache-2.0
 testrepository>=0.0.18 # Apache-2.0/BSD
 
-testtools>=1.4.0 # MIT
+testtools>=2.2.0 # MIT
 unittest2>=1.1.0 # BSD
 
 sphinx>=1.6.2 # BSD
