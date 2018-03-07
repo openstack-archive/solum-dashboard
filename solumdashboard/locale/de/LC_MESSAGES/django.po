@@ -1,0 +1,335 @@
+# Frank Kloeker <eumel@arcor.de>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: solum-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2018-01-24 06:51+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-02-10 08:33+0000\n"
+"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgid "A yaml file containing custom parameters"
+msgstr "Eine Yaml-Datei mit benutzerdefinierten Parametern"
+
+msgid "App File"
+msgstr "Anwendungsdatei"
+
+msgid "App URL"
+msgstr "App-URL"
+
+msgid "App updated"
+msgstr "App aktualisiert"
+
+msgid "Application"
+msgstr "Anwendung"
+
+msgid "Application Details"
+msgstr "Anwendungsdetails"
+
+msgid "Application Name"
+msgstr "Anwendungsname"
+
+msgid "Application entry point"
+msgstr "Anwendungseinstiegspunkt"
+
+msgid "Application was successfully created."
+msgstr "Die Anwendung wurde erfolgreich erstellt."
+
+msgid "Applications"
+msgstr "Anwendungen"
+
+msgid "Assemblies"
+msgstr "Baugruppen"
+
+msgid "Assembly Details"
+msgstr "Details zur Baugruppe"
+
+msgid "Build and Deploy Application"
+msgstr "Erstellen und Bereitstellen von Anwendungen"
+
+msgid "Command to execute unit tests"
+msgstr "Befehl zum Ausführen von Komponententests"
+
+msgid "Could not update app"
+msgstr "Die App konnte nicht aktualisiert werden"
+
+msgid "Create Application"
+msgstr "Anwendung erstellen"
+
+msgid "Create Languagepack"
+msgstr "Sprachpaket erstellen"
+
+msgid "Created at"
+msgstr "Hergestellt in"
+
+msgid "Delete Application"
+msgid_plural "Delete Applications"
+msgstr[0] "Lösche Anwendung"
+msgstr[1] "Lösche Anwendungen"
+
+msgid "Delete Assembly"
+msgid_plural "Delete Assemblies"
+msgstr[0] "Gelöschte Baugruppe"
+msgstr[1] "Gelöschte Baugruppen"
+
+msgid "Delete Languagepack"
+msgid_plural "Delete Languagepacks"
+msgstr[0] "Lösche Sprachpaket"
+msgstr[1] "Lösche Sprachpakete"
+
+msgid "Deleted Application"
+msgid_plural "Deleted Applications"
+msgstr[0] "Gelöschte Anwendung"
+msgstr[1] "Gelöschte Anwendungen"
+
+msgid "Deleted Languagepack"
+msgid_plural "Deleted Languagepacks"
+msgstr[0] "Gelöschtes Sprachpaket"
+msgstr[1] "Gelöschte Sprachpakete"
+
+msgid "Deploy Application"
+msgstr "Stellen Sie die Anwendung bereit"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Description:"
+msgstr "Beschreibung:"
+
+msgid "Enter the details for the application."
+msgstr "Geben Sie die Details für die Anwendung ein."
+
+msgid "Enter the details for the languagepack."
+msgstr "Geben Sie die Details für das Sprachpaket ein."
+
+msgid "Entry points"
+msgstr "Einstiegspunkte"
+
+msgid "General Info"
+msgstr "Allgemeine Information"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "ID of the DU image"
+msgstr "ID des DU-Abbildes"
+
+msgid "Input"
+msgstr "Eingang"
+
+msgid "Languagepack"
+msgstr "Sprachpaket"
+
+#, python-format
+msgid "Languagepack %s was successfully created."
+msgstr "Sprachpaket %s wurde erfolgreich erstellt."
+
+msgid "Languagepack Details"
+msgstr "Sprachpaket Details"
+
+msgid "Languagepack Metadata File"
+msgstr "Sprachpaket-Metadaten-Datei"
+
+msgid "Languagepack Name"
+msgstr "Sprachpaketname"
+
+msgid "Languagepacks"
+msgstr "Sprachpakete"
+
+msgid "Launch Application"
+msgstr "Programm starten"
+
+msgid "Local Storage"
+msgstr "Lokaler Speicher"
+
+msgid "Local app file location"
+msgstr "Speicherort der lokalen Anwendungsdatei"
+
+msgid "Location"
+msgstr "Ort"
+
+msgid "Log details"
+msgstr "Protokolldetails"
+
+msgid "Log details for "
+msgstr "Protokolldetails für"
+
+msgid "Logs"
+msgstr "Protokolle"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New Application"
+msgstr "Neue Anwendung"
+
+msgid "New Assembly"
+msgstr "Neue Baugruppen"
+
+msgid "New Languagepack"
+msgstr "Neues Sprachpaket"
+
+msgid "No Log details."
+msgstr "Keine Protokolldetails."
+
+msgid "No Workflow details."
+msgstr "Keine Workflowdetails."
+
+msgid "Parameter File"
+msgstr "Parameterdatei"
+
+msgid "Please supply a github url"
+msgstr "Bitte gib eine Github-URL an"
+
+msgid "Please supply a languagepack"
+msgstr "Bitte liefern Sie ein Sprachpaket"
+
+msgid "Please supply a name"
+msgstr "Bitte geben Sie einen Namen an"
+
+msgid "Please supply a run command"
+msgstr "Bitte geben Sie einen Laufbefehl ein"
+
+msgid "Please supply an app file"
+msgstr "Bitte geben Sie eine App-Datei an"
+
+msgid "Ports"
+msgstr "Ports"
+
+msgid "Resource UUID"
+msgstr "Ressourcen-UUID"
+
+msgid "Scale Application"
+msgstr "Anwendung skalieren"
+
+msgid "Scale target must be greater than zero"
+msgstr "Maßstabsziel muss größer als Null sein"
+
+msgid "Scheduled deletion of Assembly"
+msgid_plural "Scheduled deletion of Assemblies"
+msgstr[0] "Geplante Baugruppenlöschung"
+msgstr[1] "Geplante Baugruppenlöschungen"
+
+msgid "Solum"
+msgstr "Solum"
+
+msgid "Solum - Applications"
+msgstr "Solum - Anwendungen"
+
+msgid "Solum - Assemblies"
+msgstr "Solum - Baugruppen"
+
+msgid "Solum - Languagepacks"
+msgstr "Solum - Sprachpakete"
+
+msgid "Source"
+msgstr "Quelle"
+
+msgid "Source Repository"
+msgstr "Quell-Repository"
+
+msgid "Source Revision"
+msgstr "Quellversion"
+
+msgid "Source URI"
+msgstr "Quell-URI"
+
+msgid "Source Uri"
+msgstr "Quelle Uri"
+
+msgid "Source repository"
+msgstr "Quell-Repository"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Swift Container"
+msgstr "Schneller Behälter"
+
+msgid "Swift Path"
+msgstr "Schneller Pfad"
+
+msgid "Target"
+msgstr "Ziel"
+
+msgid "Target Instances"
+msgstr "Zielinstanzen"
+
+msgid ""
+"The ID of the DU image is optional, You can deploy the applications without "
+"this."
+msgstr ""
+"Die ID des DU-Abbildes ist optional. Sie können die Anwendungen ohne dieses "
+"bereitstellen."
+
+msgid "The port your application listens on"
+msgstr "Der Port, auf den Ihre Anwendung zugreift"
+
+msgid "Trigger"
+msgstr "Auslösen"
+
+msgid "Trigger URI"
+msgstr "Auslöser-URI"
+
+msgid "Trigger UUID"
+msgstr "Auslöser UUID"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Unable to create application"
+msgstr "Die Anwendung konnte nicht erstellt werden"
+
+msgid "Unable to create languagepack."
+msgstr "Kann Sprachpaket nicht erstellen."
+
+msgid "Unable to retrieve application details."
+msgstr "Die Anwendungsdetails konnten nicht abgerufen werden."
+
+msgid "Unable to retrieve apps."
+msgstr "Apps konnten nicht abgerufen werden."
+
+msgid "Unable to retrieve languagepack details."
+msgstr "Die Sprachpaketdetails konnten nicht abgerufen werden."
+
+msgid "Unable to retrieve languagepacks."
+msgstr "Sprachpakete konnten nicht abgerufen werden."
+
+msgid "Update"
+msgstr "Aktualisieren"
+
+msgid "Update App"
+msgstr "App aktualisieren"
+
+msgid "Update Application"
+msgstr "Anwendung aktualisieren"
+
+msgid "Updated at"
+msgstr "Aktualisiert am"
+
+msgid "View"
+msgstr "Ansicht"
+
+msgid "View Application Logs"
+msgstr "Anwendungsprotokolle anzeigen"
+
+msgid "Workflow ID"
+msgstr "Arbeitsablauf-ID"
+
+msgid "Workflow Run Command"
+msgstr "Workflow-Ausführungsbefehl"
+
+msgid "Workflow Test Command"
+msgstr "Workflow Testbefehl"
+
+msgid "Workflow details for"
+msgstr "Workflowdetails für"
