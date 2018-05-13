@@ -1,0 +1,328 @@
+# suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: solum-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2018-03-27 01:01+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-05-13 03:53+0000\n"
+"Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A yaml file containing custom parameters"
+msgstr "File yaml yang berisi parameter khusus"
+
+msgid "App File"
+msgstr "App File"
+
+msgid "App URL"
+msgstr "App URL"
+
+msgid "App updated"
+msgstr "Aplikasi diperbarui"
+
+msgid "Application"
+msgstr "Aplikasi"
+
+msgid "Application Details"
+msgstr "Detail aplikasi"
+
+msgid "Application Name"
+msgstr "Application Name"
+
+msgid "Application entry point"
+msgstr "Titik masuk aplikasi"
+
+msgid "Application was successfully created."
+msgstr "Aplikasi berhasil dibuat."
+
+msgid "Applications"
+msgstr "Aplikasi"
+
+msgid "Assemblies"
+msgstr "Assemblies (perakitan)"
+
+msgid "Assembly Details"
+msgstr "Rincian Perakitan"
+
+msgid "Build and Deploy Application"
+msgstr "Bangun dan Terapkan Aplikasi"
+
+msgid "Command to execute unit tests"
+msgstr "Perintah untuk mengeksekusi tes unit"
+
+msgid "Could not update app"
+msgstr "Tidak dapat memperbarui aplikasi"
+
+msgid "Create Application"
+msgstr "Buat Aplikasi"
+
+msgid "Create Languagepack"
+msgstr "Buat Languagepack"
+
+msgid "Created at"
+msgstr "Created at (dibuat di)"
+
+msgid "Delete Application"
+msgid_plural "Delete Applications"
+msgstr[0] "Delete Application"
+
+msgid "Delete Assembly"
+msgid_plural "Delete Assemblies"
+msgstr[0] "Delete Assembly"
+
+msgid "Delete Languagepack"
+msgid_plural "Delete Languagepacks"
+msgstr[0] "Delete Languagepack"
+
+msgid "Deleted Application"
+msgid_plural "Deleted Applications"
+msgstr[0] "Deleted Application"
+
+msgid "Deleted Languagepack"
+msgid_plural "Deleted Languagepacks"
+msgstr[0] "Deleted Languagepack"
+
+msgid "Deploy Application"
+msgstr "Terapkan Aplikasi"
+
+msgid "Description"
+msgstr "Deskripsi"
+
+msgid "Description:"
+msgstr "Deskripsi:"
+
+msgid "Enter the details for the application."
+msgstr "Masukkan detail untuk aplikasi."
+
+msgid "Enter the details for the languagepack."
+msgstr "Masukkan detail untuk languagepack."
+
+msgid "Entry points"
+msgstr "Titik masuk"
+
+msgid "General Info"
+msgstr "Informasi Umum"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "ID of the DU image"
+msgstr "ID image DU"
+
+msgid "Input"
+msgstr "Input"
+
+msgid "Languagepack"
+msgstr "Languagepack"
+
+#, python-format
+msgid "Languagepack %s was successfully created."
+msgstr "Languagepack %s berhasil dibuat."
+
+msgid "Languagepack Details"
+msgstr "Detail Languagepack"
+
+msgid "Languagepack Metadata File"
+msgstr "File Metadata Languagepack"
+
+msgid "Languagepack Name"
+msgstr "Nama Languagepack"
+
+msgid "Languagepacks"
+msgstr "Languagepack"
+
+msgid "Launch Application"
+msgstr "Launch Application"
+
+msgid "Local Storage"
+msgstr "Penyimpanan lokal"
+
+msgid "Local app file location"
+msgstr "Lokasi file aplikasi lokal"
+
+msgid "Location"
+msgstr "Lokasi"
+
+msgid "Log details"
+msgstr "Detail log"
+
+msgid "Log details for "
+msgstr "Detail log untuk"
+
+msgid "Logs"
+msgstr "Log"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New Application"
+msgstr "Aplikasi baru"
+
+msgid "New Assembly"
+msgstr "New Assembly (perakitan baru)"
+
+msgid "New Languagepack"
+msgstr "Languagepack baru"
+
+msgid "No Log details."
+msgstr "Tidak ada rincian Log."
+
+msgid "No Workflow details."
+msgstr "Tidak ada detail Alur Kerja."
+
+msgid "Parameter File"
+msgstr "File Parameter"
+
+msgid "Please supply a github url"
+msgstr "Harap berikan url github"
+
+msgid "Please supply a languagepack"
+msgstr "Harap berikan languagepack"
+
+msgid "Please supply a name"
+msgstr "Harap berikan nama"
+
+msgid "Please supply a run command"
+msgstr "Harap berikan perintah run"
+
+msgid "Please supply an app file"
+msgstr "Harap berikan file aplikasi"
+
+msgid "Ports"
+msgstr "Port"
+
+msgid "Resource UUID"
+msgstr "Sumber UUID"
+
+msgid "Scale Application"
+msgstr "Aplikasi Skala"
+
+msgid "Scale target must be greater than zero"
+msgstr "Target skala harus lebih besar dari nol"
+
+msgid "Scheduled deletion of Assembly"
+msgid_plural "Scheduled deletion of Assemblies"
+msgstr[0] "Scheduled deletion of Assembly"
+
+msgid "Solum"
+msgstr "Solum"
+
+msgid "Solum - Applications"
+msgstr "Solum - Aplikasi"
+
+msgid "Solum - Assemblies"
+msgstr "Solum - Rakitan"
+
+msgid "Solum - Languagepacks"
+msgstr "Solum - Languagepack"
+
+msgid "Source"
+msgstr "Source"
+
+msgid "Source Repository"
+msgstr "Source Repository"
+
+msgid "Source Revision"
+msgstr "Source Revision"
+
+msgid "Source URI"
+msgstr "Source URI"
+
+msgid "Source Uri"
+msgstr "Source Uri"
+
+msgid "Source repository"
+msgstr "Sumber repositori"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Swift Container"
+msgstr "Kontainer Swift"
+
+msgid "Swift Path"
+msgstr "Jalur Swift"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "Target Instances"
+msgstr "Instance sasaran"
+
+msgid ""
+"The ID of the DU image is optional, You can deploy the applications without "
+"this."
+msgstr ""
+"ID dari image DU adalah opsional, Anda dapat menerapkan aplikasi tanpa ini."
+
+msgid "The port your application listens on"
+msgstr "Port aplikasi Anda mendengarkan"
+
+msgid "Trigger"
+msgstr "Trigger (pemicu)"
+
+msgid "Trigger URI"
+msgstr "Pemicu URI"
+
+msgid "Trigger UUID"
+msgstr "Memicu UUID"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "UUID"
+msgstr "UUID"
+
+msgid "Unable to create application"
+msgstr "Tidak dapat membuat aplikasi"
+
+msgid "Unable to create languagepack."
+msgstr "Tidak dapat membuat languagepack."
+
+msgid "Unable to retrieve application details."
+msgstr "Tidak dapat mengambil detail aplikasi."
+
+msgid "Unable to retrieve apps."
+msgstr "Tidak dapat mengambil aplikasi."
+
+msgid "Unable to retrieve languagepack details."
+msgstr "Tidak dapat mengambil detail languagepack."
+
+msgid "Unable to retrieve languagepacks."
+msgstr "Tidak dapat mengambil languagepack."
+
+msgid "Update"
+msgstr "Memperbarui"
+
+msgid "Update App"
+msgstr "Perbarui Aplikasi"
+
+msgid "Update Application"
+msgstr "Perbarui Aplikasi"
+
+msgid "Updated at"
+msgstr "Updated at (diperbarui pada)"
+
+msgid "View"
+msgstr "View"
+
+msgid "View Application Logs"
+msgstr "Lihat Log Aplikasi"
+
+msgid "Workflow ID"
+msgstr "Workflow ID"
+
+msgid "Workflow Run Command"
+msgstr "Perintah Jalankan Alur Kerja"
+
+msgid "Workflow Test Command"
+msgstr "Perintah Tes Alur Kerja"
+
+msgid "Workflow details for"
+msgstr "Detail alur kerja untuk"
