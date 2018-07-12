@@ -17,8 +17,7 @@ This plugin requires a working openstack install including solum and horizon.
 How to install solum-dashboard into Horizon.
 --------------------------------------------
 
-Enter these commands in your terminal
-::
+Enter these commands in your terminal:
 
  sudo pip install -e /opt/stack/solum-dashboard
  cd /opt/stack/horizon/openstack_dashboard/local/enabled
