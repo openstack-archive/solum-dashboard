@@ -27,5 +27,5 @@ AUTHORS
 ChangeLog
 tags
 openstack_dashboard/dummydb.sqlite
-.testrepository/
+.stestr/
 test
