@@ -2,6 +2,12 @@
     check:
       jobs:
         - openstack-tox-lower-constraints
+        - horizon-openstack-tox-py35dj20:
+            required-projects:
+              openstack/horizon
     gate:
       jobs:
         - openstack-tox-lower-constraints
+        - horizon-openstack-tox-py35dj20:
+            required-projects:
+              openstack/horizon
