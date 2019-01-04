@@ -26,4 +26,5 @@ class SolumPlugin(horizon.Dashboard):
     nav = True
     supports_tenants = True
 
+
 horizon.register(SolumPlugin)

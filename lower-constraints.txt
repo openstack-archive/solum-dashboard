@@ -25,9 +25,7 @@ enmerkar==0.7.1
 extras==1.0.0
 fasteners==0.14.1
 fixtures==3.0.0
-flake8==2.5.5
 futurist==1.6.0
-hacking==0.12.0
 horizon==17.1.0
 httplib2==0.10.3
 idna==2.6
