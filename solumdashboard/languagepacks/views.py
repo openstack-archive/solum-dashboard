@@ -18,6 +18,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 import json
+import six
 
 from horizon import exceptions
 from horizon import forms
@@ -40,10 +41,11 @@ class IndexView(tables.DataTableView):
         try:
             solum = solumclient(self.request)
             languagepacks = solum.languagepacks.list()
-        except Exception:
+        except Exception as e:
             languagepacks = []
-            exceptions.handle(self.request,
-                              _('Unable to retrieve languagepacks.'))
+            exceptions.handle(
+                self.request,
+                _('Unable to retrieve languagepacks: %s') % six.text_type(e))
         return languagepacks
 
 
@@ -70,11 +72,12 @@ class DetailView(views.HorizonTemplateView):
             languagepack = solum.languagepacks.find(name_or_id=lp_id)
             loglist = cli_lp.LanguagePackManager(solum).logs(
                 lp_id=lp_id)
-        except Exception:
+        except Exception as e:
             INDEX_URL = 'horizon:solum:languagepacks:index'
-            exceptions.handle(self.request,
-                              _('Unable to retrieve languagepack details.'),
-                              redirect=reverse(INDEX_URL))
+            exceptions.handle(
+                self.request,
+                _('Unable to retrieve languagepack details: %s') % str(e),
+                redirect=reverse(INDEX_URL))
 
         for log in loglist:
             strategy_info = json.loads(log.strategy_info)

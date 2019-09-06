@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import six
+
 from django.utils.translation import ugettext_lazy as _
 
 from horizon import exceptions
@@ -33,9 +35,11 @@ class IndexView(tables.DataTableView):
         try:
             solum = solumclient(self.request)
             assemblies = solum.assemblies.list()
-        except Exception:
+        except Exception as e:
             assemblies = []
-            exceptions.handle(self.request, 'Unable to retrieve assemblies.')
+            exceptions.handle(
+                self.request,
+                _('Unable to retrieve assemblies: %s') % six.type(e))
         return assemblies
 
 

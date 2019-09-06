@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import six
+
 from django.urls import reverse
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -39,10 +41,11 @@ class IndexView(tables.DataTableView):
         try:
             solum = solumclient(self.request)
             apps = solum.apps.list()
-        except Exception:
+        except Exception as e:
             apps = []
-            exceptions.handle(self.request,
-                              _('Unable to retrieve apps.'))
+            exceptions.handle(
+                self.request,
+                _('Unable to retrieve apps: %s') % six.text_type(e))
         return apps
 
 
@@ -107,11 +110,12 @@ class DetailView(tabs.TabView):
         try:
             solum = solumclient(self.request)
             app = solum.apps.find(name_or_id=application_id)
-        except Exception:
+        except Exception as e:
             INDEX_URL = 'horizon:solum:applications:index'
-            exceptions.handle(self.request,
-                              _('Unable to retrieve application details.'),
-                              redirect=reverse(INDEX_URL))
+            exceptions.handle(
+                self.request,
+                _('Unable to retrieve application details: %s') % str(e),
+                redirect=reverse(INDEX_URL))
         context["app"] = app
         table = app_tables.ApplicationsTable(self.request)
         context["actions"] = table.render_row_actions(app)

@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import json
+import six
 
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -63,10 +64,11 @@ class CreateForm(forms.SelfHandlingForm):
             message = _(
                 'Languagepack %s was successfully created.') % data['name']
             messages.success(request, message)
-        except Exception:
+        except Exception as e:
             redirect = reverse('horizon:solum:languagepacks:index')
-            exceptions.handle(self.request,
-                              _('Unable to create languagepack.'),
-                              redirect=redirect)
+            exceptions.handle(
+                self.request,
+                _('Unable to create languagepack: %s') % six.text_type(e),
+                redirect=redirect)
 
         return True
