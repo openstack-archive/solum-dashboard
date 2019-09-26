@@ -1,14 +1,15 @@
 # Frank Kloeker <eumel@arcor.de>, 2018. #zanata
+# Andreas Jaeger <jaegerandi@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: solum-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-09-09 09:03+0000\n"
+"POT-Creation-Date: 2019-09-11 02:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-02-10 08:33+0000\n"
-"Last-Translator: Frank Kloeker <eumel@arcor.de>\n"
+"PO-Revision-Date: 2019-09-25 02:06+0000\n"
+"Last-Translator: Andreas Jaeger <jaegerandi@gmail.com>\n"
 "Language-Team: German\n"
 "Language: de\n"
 "X-Generator: Zanata 4.3.3\n"
@@ -285,6 +286,34 @@ msgstr "URI"
 
 msgid "UUID"
 msgstr "UUID"
+
+#, python-format
+msgid "Unable to create application: %s"
+msgstr "Applikation kann nicht erzeugt werden: %s"
+
+#, python-format
+msgid "Unable to create languagepack: %s"
+msgstr "Kann Sprachpakete nicht erzeugen: %s"
+
+#, python-format
+msgid "Unable to retrieve application details: %s"
+msgstr "Konnte Application Details nicht abrufen: %s"
+
+#, python-format
+msgid "Unable to retrieve apps: %s"
+msgstr "Konnte Applications nicht abrufen: %s"
+
+#, python-format
+msgid "Unable to retrieve assemblies: %s"
+msgstr "Kann Baugruppen nicht abrufen: %s"
+
+#, python-format
+msgid "Unable to retrieve languagepack details: %s"
+msgstr "Kann Details zu Sprachpaketen nicht abrufen: %s"
+
+#, python-format
+msgid "Unable to retrieve languagepacks: %s"
+msgstr "Kann Sprachpakete nicht abrufen: %s"
 
 msgid "Update"
 msgstr "Aktualisieren"
