@@ -3,6 +3,5 @@
       - check-requirements
       - horizon-non-primary-django-jobs
       - openstack-lower-constraints-jobs
-      - openstack-python-jobs-horizon
       - openstack-python3-ussuri-jobs-horizon
       - openstack-python3-ussuri-jobs

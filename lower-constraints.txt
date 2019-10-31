@@ -100,7 +100,7 @@ semantic-version==2.6.0
 simplejson==3.13.2
 six==1.11.0
 snowballstemmer==1.2.1
-Sphinx==1.6.5
+Sphinx==1.6.2
 sphinxcontrib-httpdomain==1.6.1
 sphinxcontrib-pecanwsme==0.8.0
 sphinxcontrib-websupport==1.0.1
