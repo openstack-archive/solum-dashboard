@@ -14,7 +14,7 @@ cryptography==2.1.4
 debtcollector==1.19.0
 decorator==4.2.1
 deprecation==2.0
-Django==1.11
+Django==1.11.23
 django-appconf==1.0.2
 django-babel==0.6.2
 django-compressor==2.2
