@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import six
-
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from horizon import exceptions
@@ -171,7 +169,7 @@ class CreateForm(forms.SelfHandlingForm):
                              _('Application was successfully created.'))
             return True
         except Exception as e:
-            msg = _('Unable to create application: %s') % six.text_type(e)
+            msg = _('Unable to create application: %s') % e
             redirect = reverse("horizon:solum:applications:index")
             exceptions.handle(request, msg, redirect=redirect)
             return False

@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import six
-
 from django.urls import reverse
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
@@ -45,7 +43,7 @@ class IndexView(tables.DataTableView):
             apps = []
             exceptions.handle(
                 self.request,
-                _('Unable to retrieve apps: %s') % six.text_type(e))
+                _('Unable to retrieve apps: %s') % e)
         return apps
 
 
