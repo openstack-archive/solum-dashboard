@@ -89,7 +89,7 @@ python-solumclient==2.6.1
 python-subunit==1.2.0
 python-swiftclient==3.5.0
 pytz==2018.3
-PyYAML==3.12
+PyYAML==5.3
 rcssmin==1.0.6
 requests==2.18.4
 requestsexceptions==1.4.0
