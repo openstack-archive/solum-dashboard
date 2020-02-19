@@ -23,7 +23,7 @@ from horizon import forms
 from horizon import messages
 
 from oslo_log import log as logging
-from solumclient.common import yamlutils
+import yaml
 
 from solumdashboard.api.client import client as solumclient
 
@@ -48,7 +48,7 @@ class CreateForm(forms.SelfHandlingForm):
         param_data = {}
         if data['param_file']:
             inf = data['param_file'].read()
-            param_data = yamlutils.load(inf)
+            param_data = yaml.load(inf)
 
         lp_metadata = None
 

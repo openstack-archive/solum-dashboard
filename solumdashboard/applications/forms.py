@@ -20,8 +20,8 @@ from horizon import forms
 from horizon import messages
 
 from oslo_log import log as logging
-from solumclient.common import yamlutils
 from solumclient.v1 import workflow as cli_wf
+import yaml
 
 from solumdashboard.api.client import client as solumclient
 
@@ -111,7 +111,7 @@ class CreateForm(forms.SelfHandlingForm):
         app_data = None
         if data['source'] == 'app_file':
             inf = data['app_file'].read()
-            app_data = yamlutils.load(inf)
+            app_data = yaml.load(inf)
             if 'repo_token' not in app_data:
                 app_data['repo_token'] = ''
         else:
@@ -161,7 +161,7 @@ class CreateForm(forms.SelfHandlingForm):
 
         if data['param_file']:
             param_def = data['param_file'].read()
-            app_data['parameters'] = yamlutils.load(param_def)
+            app_data['parameters'] = yaml.load(param_def)
 
         try:
             solum.apps.create(**app_data)
