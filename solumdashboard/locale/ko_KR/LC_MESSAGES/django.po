@@ -1,0 +1,340 @@
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2018. #zanata
+# Ian Y. Choi <ianyrchoi@gmail.com>, 2020. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: solum-dashboard VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2020-04-23 01:15+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-05-05 11:23+0000\n"
+"Last-Translator: Ian Y. Choi <ianyrchoi@gmail.com>\n"
+"Language-Team: Korean (South Korea)\n"
+"Language: ko_KR\n"
+"X-Generator: Zanata 4.3.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "A yaml file containing custom parameters"
+msgstr "사용자 지정 매개 변수를 포함하는 yaml 파일"
+
+msgid "App File"
+msgstr "앱 파일"
+
+msgid "App URL"
+msgstr "앱 URL"
+
+msgid "App updated"
+msgstr "앱 업데이트됨"
+
+msgid "Application"
+msgstr "응용 프로그램"
+
+msgid "Application Details"
+msgstr "응용 프로그램 세부 사항"
+
+msgid "Application Name"
+msgstr "응용 프로그램 이름"
+
+msgid "Application entry point"
+msgstr "응용 프로그램 진입점"
+
+msgid "Application was successfully created."
+msgstr "응용 프로그램이 성공적으로 생성되었습니다."
+
+msgid "Applications"
+msgstr "응용 프로그램"
+
+msgid "Assemblies"
+msgstr "어셈블리"
+
+msgid "Assembly Details"
+msgstr "어셈블리 세부 사항"
+
+msgid "Build and Deploy Application"
+msgstr "응용 프로그램 구축 및 배포"
+
+msgid "Command to execute unit tests"
+msgstr "유닛 테스트를 실행하는 명령"
+
+msgid "Could not update app"
+msgstr "앱을 업데이트 할 수 없음"
+
+msgid "Create Application"
+msgstr "응용 프로그램 생성"
+
+msgid "Create Languagepack"
+msgstr "언어팩 생성"
+
+msgid "Created at"
+msgstr "생성 시점"
+
+msgid "Delete Application"
+msgid_plural "Delete Applications"
+msgstr[0] "응용 프로그램 삭제"
+
+msgid "Delete Assembly"
+msgid_plural "Delete Assemblies"
+msgstr[0] "어셈블리 삭제"
+
+msgid "Delete Languagepack"
+msgid_plural "Delete Languagepacks"
+msgstr[0] "언어팩 삭제"
+
+msgid "Deleted Application"
+msgid_plural "Deleted Applications"
+msgstr[0] "응용 프로그램 삭제됨"
+
+msgid "Deleted Languagepack"
+msgid_plural "Deleted Languagepacks"
+msgstr[0] "언어팩 삭제함"
+
+msgid "Deploy Application"
+msgstr "응용 프로그램 배포"
+
+msgid "Description"
+msgstr "설명"
+
+msgid "Description:"
+msgstr "설명:"
+
+msgid "Enter the details for the application."
+msgstr "응용 프로그램에 대한 세부 사항을 입력합니다."
+
+msgid "Enter the details for the languagepack."
+msgstr "언어팩에 대한 세부 사항을 입력하세요."
+
+msgid "Entry points"
+msgstr "진입점"
+
+msgid "General Info"
+msgstr "일반 정보"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "ID of the DU image"
+msgstr "DU 이미지의 ID"
+
+msgid "Input"
+msgstr "입력"
+
+msgid "Languagepack"
+msgstr "언어팩"
+
+#, python-format
+msgid "Languagepack %s was successfully created."
+msgstr "언어팩 %s 을(를) 성공적으로 생성하였습니다."
+
+msgid "Languagepack Details"
+msgstr "언어팩 세부 사항"
+
+msgid "Languagepack Metadata File"
+msgstr "언어팩 메타 데이터 파일"
+
+msgid "Languagepack Name"
+msgstr "언어팩 이름"
+
+msgid "Languagepacks"
+msgstr "언어팩"
+
+msgid "Launch Application"
+msgstr "응용 프로그램 실행"
+
+msgid "Local Storage"
+msgstr "로컬 저장소"
+
+msgid "Local app file location"
+msgstr "로컬 앱 파일 위치"
+
+msgid "Location"
+msgstr "위치"
+
+msgid "Log details"
+msgstr "로그 세부 사항"
+
+msgid "Log details for "
+msgstr "로그 세부 사항:"
+
+msgid "Logs"
+msgstr "로그"
+
+msgid "Name"
+msgstr "이름"
+
+msgid "New Application"
+msgstr "새 응용 프로그램"
+
+msgid "New Assembly"
+msgstr "새 어셈블리"
+
+msgid "New Languagepack"
+msgstr "새 언어팩"
+
+msgid "No Log details."
+msgstr "로그 세부 사항 없음."
+
+msgid "No Workflow details."
+msgstr "워크플로우 세부 사항이 없음"
+
+msgid "Parameter File"
+msgstr "매개변수 파일"
+
+msgid "Please supply a github url"
+msgstr "Github url을 제공하십시오"
+
+msgid "Please supply a languagepack"
+msgstr "언어팩을 제공하십시오"
+
+msgid "Please supply a name"
+msgstr "이름을 입력하십시오"
+
+msgid "Please supply a run command"
+msgstr "실행 명령을 제공하십시오"
+
+msgid "Please supply an app file"
+msgstr "앱 파일을 제공하십시오"
+
+msgid "Ports"
+msgstr "포트"
+
+msgid "Resource UUID"
+msgstr "자원 UUID"
+
+msgid "Scale Application"
+msgstr "응용 프로그램 스케일"
+
+msgid "Scale target must be greater than zero"
+msgstr "스케일 대상은 0보다 커야 합니다."
+
+msgid "Scheduled deletion of Assembly"
+msgid_plural "Scheduled deletion of Assemblies"
+msgstr[0] "예약된 어셈블리 삭제"
+
+msgid "Solum"
+msgstr "Solum"
+
+msgid "Solum - Applications"
+msgstr "Solum-응용 프로그램"
+
+msgid "Solum - Assemblies"
+msgstr "Solum-어셈블리"
+
+msgid "Solum - Languagepacks"
+msgstr "Solum - 언어 팩"
+
+msgid "Source"
+msgstr "소스"
+
+msgid "Source Repository"
+msgstr "소스 저장소"
+
+msgid "Source Revision"
+msgstr "소스 수정"
+
+msgid "Source URI"
+msgstr "URI 원본"
+
+msgid "Source Uri"
+msgstr "Uri 원본"
+
+msgid "Source repository"
+msgstr "소스 저장소"
+
+msgid "Status"
+msgstr "상태"
+
+msgid "Swift Container"
+msgstr "Swift 컨테이너"
+
+msgid "Swift Path"
+msgstr "Swift 경로"
+
+msgid "Target"
+msgstr "대상"
+
+msgid "Target Instances"
+msgstr "대상 인스턴스"
+
+msgid ""
+"The ID of the DU image is optional, You can deploy the applications without "
+"this."
+msgstr ""
+"DU 이미지의 ID는 선택 사항입니다. 이것이 없이 응용 프로그램을 배포할 수 있습"
+"니다."
+
+msgid "The port your application listens on"
+msgstr "응용 프로그램이 수신하는 포트"
+
+msgid "Trigger"
+msgstr "트리거"
+
+msgid "Trigger URI"
+msgstr "트리거 URI"
+
+msgid "Trigger UUID"
+msgstr "트리거 UUID"
+
+msgid "URI"
+msgstr "URI"
+
+msgid "UUID"
+msgstr "UUID"
+
+#, python-format
+msgid "Unable to create application: %s"
+msgstr "스냅샷을 생성할 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to create languagepack: %s"
+msgstr "언어팩을 생성할 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve application details: %s"
+msgstr "응용 프로그램 세부 정보를 가져올 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve apps: %s"
+msgstr "리시버를 가져올 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve assemblies: %s"
+msgstr "어셈블리를 가져올 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve languagepack details: %s"
+msgstr "언어팩 세부 정보를 가져올 수 없습니다: %s"
+
+#, python-format
+msgid "Unable to retrieve languagepacks: %s"
+msgstr "언어팩을 가져올 수 없습니다: %s"
+
+msgid "Update"
+msgstr "업데이트"
+
+msgid "Update App"
+msgstr "앱 업데이트"
+
+msgid "Update Application"
+msgstr "응용 프로그램 업데이트"
+
+msgid "Updated at"
+msgstr "갱신 시점"
+
+msgid "View"
+msgstr "뷰"
+
+msgid "View Application Logs"
+msgstr "응용 프로그램 로그 보기"
+
+msgid "Workflow ID"
+msgstr "워크플로우 ID"
+
+msgid "Workflow Run Command"
+msgstr "워크플로우 실행 명령"
+
+msgid "Workflow Test Command"
+msgstr "워크플로우 테스트 명령"
+
+msgid "Workflow details for"
+msgstr "워크플로우 세부 사항:"
