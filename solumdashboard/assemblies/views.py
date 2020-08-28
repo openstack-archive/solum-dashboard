@@ -33,11 +33,11 @@ class IndexView(tables.DataTableView):
         try:
             solum = solumclient(self.request)
             assemblies = solum.assemblies.list()
-        except Exception as e:
+        except Exception:
             assemblies = []
             exceptions.handle(
                 self.request,
-                _('Unable to retrieve assemblies: %s') % e)
+                _('Unable to retrieve assemblies.'))
         return assemblies
 
 

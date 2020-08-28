@@ -168,8 +168,8 @@ class CreateForm(forms.SelfHandlingForm):
             messages.success(request,
                              _('Application was successfully created.'))
             return True
-        except Exception as e:
-            msg = _('Unable to create application: %s') % e
+        except Exception:
+            msg = _('Unable to create application.')
             redirect = reverse("horizon:solum:applications:index")
             exceptions.handle(request, msg, redirect=redirect)
             return False

@@ -40,11 +40,11 @@ class IndexView(tables.DataTableView):
         try:
             solum = solumclient(self.request)
             languagepacks = solum.languagepacks.list()
-        except Exception as e:
+        except Exception:
             languagepacks = []
             exceptions.handle(
                 self.request,
-                _('Unable to retrieve languagepacks: %s') % e)
+                _('Unable to retrieve languagepacks.'))
         return languagepacks
 
 
@@ -71,11 +71,11 @@ class DetailView(views.HorizonTemplateView):
             languagepack = solum.languagepacks.find(name_or_id=lp_id)
             loglist = cli_lp.LanguagePackManager(solum).logs(
                 lp_id=lp_id)
-        except Exception as e:
+        except Exception:
             INDEX_URL = 'horizon:solum:languagepacks:index'
             exceptions.handle(
                 self.request,
-                _('Unable to retrieve languagepack details: %s') % e,
+                _('Unable to retrieve languagepack details.'),
                 redirect=reverse(INDEX_URL))
 
         for log in loglist:

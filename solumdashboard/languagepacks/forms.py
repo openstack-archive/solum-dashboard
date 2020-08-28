@@ -63,11 +63,11 @@ class CreateForm(forms.SelfHandlingForm):
             message = _(
                 'Languagepack %s was successfully created.') % data['name']
             messages.success(request, message)
-        except Exception as e:
+        except Exception:
             redirect = reverse('horizon:solum:languagepacks:index')
             exceptions.handle(
                 self.request,
-                _('Unable to create languagepack: %s') % e,
+                _('Unable to create languagepack.'),
                 redirect=redirect)
 
         return True

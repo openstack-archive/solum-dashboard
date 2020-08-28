@@ -39,11 +39,11 @@ class IndexView(tables.DataTableView):
         try:
             solum = solumclient(self.request)
             apps = solum.apps.list()
-        except Exception as e:
+        except Exception:
             apps = []
             exceptions.handle(
                 self.request,
-                _('Unable to retrieve apps: %s') % e)
+                _('Unable to retrieve apps.'))
         return apps
 
 
@@ -108,11 +108,11 @@ class DetailView(tabs.TabView):
         try:
             solum = solumclient(self.request)
             app = solum.apps.find(name_or_id=application_id)
-        except Exception as e:
+        except Exception:
             INDEX_URL = 'horizon:solum:applications:index'
             exceptions.handle(
                 self.request,
-                _('Unable to retrieve application details: %s') % str(e),
+                _('Unable to retrieve application details.'),
                 redirect=reverse(INDEX_URL))
         context["app"] = app
         table = app_tables.ApplicationsTable(self.request)
