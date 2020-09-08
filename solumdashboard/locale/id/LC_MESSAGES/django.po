@@ -1,14 +1,13 @@
 # suhartono <cloudsuhartono@gmail.com>, 2018. #zanata
-# suhartono <cloudsuhartono@gmail.com>, 2019. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: solum-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2019-09-09 09:03+0000\n"
+"POT-Creation-Date: 2020-09-08 06:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-09-09 03:53+0000\n"
+"PO-Revision-Date: 2018-05-13 03:53+0000\n"
 "Last-Translator: suhartono <cloudsuhartono@gmail.com>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
@@ -280,33 +279,20 @@ msgstr "URI"
 msgid "UUID"
 msgstr "UUID"
 
-#, python-format
-msgid "Unable to create application: %s"
-msgstr "Tidak dapat membuat aplikasi: %s"
+msgid "Unable to create languagepack."
+msgstr "Tidak dapat membuat languagepack."
 
-#, python-format
-msgid "Unable to create languagepack: %s"
-msgstr "Tidak dapat membuat paket bahasa (languagepack): %s"
+msgid "Unable to retrieve application details."
+msgstr "Tidak dapat mengambil detail aplikasi."
 
-#, python-format
-msgid "Unable to retrieve application details: %s"
-msgstr "Tidak dapat mengambil detail aplikasi: %s"
+msgid "Unable to retrieve apps."
+msgstr "Tidak dapat mengambil aplikasi."
 
-#, python-format
-msgid "Unable to retrieve apps: %s"
-msgstr "Tidak dapat mengambil aplikasi: %s"
+msgid "Unable to retrieve languagepack details."
+msgstr "Tidak dapat mengambil detail languagepack."
 
-#, python-format
-msgid "Unable to retrieve assemblies: %s"
-msgstr "Tidak dapat mengambil assemblies: %s"
-
-#, python-format
-msgid "Unable to retrieve languagepack details: %s"
-msgstr "Tidak dapat mengambil detail languagepack: %s"
-
-#, python-format
-msgid "Unable to retrieve languagepacks: %s"
-msgstr "Tidak dapat mengambil languagepacks: %s"
+msgid "Unable to retrieve languagepacks."
+msgstr "Tidak dapat mengambil languagepack."
 
 msgid "Update"
 msgstr "Memperbarui"
