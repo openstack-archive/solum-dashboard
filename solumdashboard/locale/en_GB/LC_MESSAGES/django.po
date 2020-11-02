@@ -1,13 +1,14 @@
 # Andi Chandler <andi@gowling.com>, 2017. #zanata
+# Andi Chandler <andi@gowling.com>, 2020. #zanata
 msgid ""
 msgstr ""
 "Project-Id-Version: solum-dashboard VERSION\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
-"POT-Creation-Date: 2020-09-08 06:04+0000\n"
+"POT-Creation-Date: 2020-10-10 01:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-10-15 07:46+0000\n"
+"PO-Revision-Date: 2020-11-02 02:58+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom)\n"
 "Language: en_GB\n"
@@ -286,6 +287,9 @@ msgstr "URI"
 msgid "UUID"
 msgstr "UUID"
 
+msgid "Unable to create application."
+msgstr "Unable to create application."
+
 msgid "Unable to create languagepack."
 msgstr "Unable to create language pack."
 
@@ -294,6 +298,9 @@ msgstr "Unable to retrieve application details."
 
 msgid "Unable to retrieve apps."
 msgstr "Unable to retrieve apps."
+
+msgid "Unable to retrieve assemblies."
+msgstr "Unable to retrieve assemblies."
 
 msgid "Unable to retrieve languagepack details."
 msgstr "Unable to retrieve language pack details."
