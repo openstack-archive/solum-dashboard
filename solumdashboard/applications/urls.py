@@ -13,21 +13,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.conf.urls import url
+from django.urls import re_path
 
 import solumdashboard.applications.views as views
 
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^$', views.IndexView.as_view(), name='applications'),
-    url(r'^create$', views.CreateView.as_view(), name='create'),
-    url(r'^launch/(?P<application_id>[^/]+)$', views.LaunchView.as_view(),
-        name='launch'),
-    url(r'^detail/(?P<application_id>[^/]+)$',
-        views.DetailView.as_view(), name='detail'),
-    url(r'^scale/(?P<application_id>[^/]+)$', views.ScaleView.as_view(),
-        name='scale'),
-    url(r'^update/(?P<application_id>[^/]+)$', views.UpdateView.as_view(),
-        name='update')
+    re_path(r'^$', views.IndexView.as_view(), name='index'),
+    re_path(r'^$', views.IndexView.as_view(), name='applications'),
+    re_path(r'^create$', views.CreateView.as_view(), name='create'),
+    re_path(r'^launch/(?P<application_id>[^/]+)$', views.LaunchView.as_view(),
+            name='launch'),
+    re_path(r'^detail/(?P<application_id>[^/]+)$',
+            views.DetailView.as_view(), name='detail'),
+    re_path(r'^scale/(?P<application_id>[^/]+)$', views.ScaleView.as_view(),
+            name='scale'),
+    re_path(r'^update/(?P<application_id>[^/]+)$', views.UpdateView.as_view(),
+            name='update')
 ]
