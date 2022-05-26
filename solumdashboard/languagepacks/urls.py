@@ -13,14 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from solumdashboard.languagepacks import views
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^$', views.IndexView.as_view(), name='languagepacks'),
-    url(r'^detail/(?P<languagepack_id>[^/]+)$',
-        views.DetailView.as_view(), name='detail'),
-    url(r'^create$', views.CreateView.as_view(), name='create')
+    re_path(r'^$', views.IndexView.as_view(), name='index'),
+    re_path(r'^$', views.IndexView.as_view(), name='languagepacks'),
+    re_path(r'^detail/(?P<languagepack_id>[^/]+)$',
+            views.DetailView.as_view(), name='detail'),
+    re_path(r'^create$', views.CreateView.as_view(), name='create')
 ]
