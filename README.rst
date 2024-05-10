@@ -1,25 +1,10 @@
-========================
-Team and repository tags
-========================
+This project is no longer maintained.
 
-.. image:: http://governance.openstack.org/badges/solum-dashboard.svg
-    :target: http://governance.openstack.org/reference/tags/index.html
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1".
 
-.. Change things from this point on
-
-solum-dashboard
-===============
-
-Horizon plugin for Solum
-Purpose of this plugin is to add Solum capabilities to the openstack dashboard.
-This plugin requires a working openstack install including solum and horizon.
-
-How to install solum-dashboard into Horizon.
---------------------------------------------
-
-Enter these commands in your terminal:
-
- sudo pip install -e /opt/stack/solum-dashboard
- cd /opt/stack/horizon/openstack_dashboard/local/enabled
- ln -s /opt/stack/solum-dashboard/solumdashboard/local/enabled/_50_solum.py _50_solum.py
- sudo service apache2 restart
+For any further questions, please email
+openstack-discuss@lists.openstack.org or join #openstack-dev on
+OFTC.
